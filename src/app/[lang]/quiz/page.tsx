@@ -73,7 +73,7 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
   if (questions.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <p className="text-gray-400">퀴즈를 준비하는 중...</p>
+        <p className="text-gray-400 dark:text-gray-500">퀴즈를 준비하는 중...</p>
       </div>
     );
   }
@@ -86,14 +86,14 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.push(`/${lang}`)}
-          className="text-gray-400 hover:text-gray-600 transition-colors"
+          className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           aria-label="학습으로 돌아가기"
         >
           ← 뒤로
         </button>
         <div className="flex items-center gap-2">
           <span className="text-xl">{LANG_FLAGS[language]}</span>
-          <span className="font-bold text-gray-900">{LANG_NAMES[language]} 퀴즈</span>
+          <span className="font-bold text-gray-900 dark:text-gray-100">{LANG_NAMES[language]} 퀴즈</span>
         </div>
       </div>
 
@@ -103,7 +103,7 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
         label={`문제 ${currentIndex + 1} / ${questions.length}`}
       />
 
-      <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 shadow-sm">
         <QuizQuestionCard
           question={question}
           onAnswer={handleAnswer}

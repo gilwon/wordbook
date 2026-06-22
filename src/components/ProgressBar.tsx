@@ -11,13 +11,13 @@ export default function ProgressBar({ current, total, label }: ProgressBarProps)
     <div className="w-full">
       {label && (
         <div className="flex justify-between items-center mb-1.5">
-          <span className="text-sm text-gray-600">{label}</span>
-          <span className="text-sm font-semibold text-indigo-600">
+          <span className="text-sm text-gray-600 dark:text-gray-400">{label}</span>
+          <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
             {current}/{total}
           </span>
         </div>
       )}
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
         <div
           className="bg-indigo-500 h-2.5 rounded-full transition-all duration-500"
           style={{ width: `${percent}%` }}

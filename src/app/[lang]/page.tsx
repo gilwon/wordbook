@@ -41,27 +41,27 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.push('/')}
-          className="text-gray-400 hover:text-gray-600 transition-colors"
+          className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           aria-label="홈으로"
         >
           ← 뒤로
         </button>
         <div className="flex items-center gap-2">
           <span className="text-2xl">{LANG_FLAGS[language]}</span>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
             {LANG_NAMES[language]} 오늘의 단어
           </h1>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl border border-gray-100 p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-4">
         <ProgressBar
           current={correctCount}
           total={totalQuestions}
           label={result ? `오늘 학습 진행률 (${date})` : `오늘의 단어 (${date})`}
         />
         {result && (
-          <p className="text-xs text-gray-400 mt-2 text-center">
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
             최근 시험 점수: {result.scorePercent}점 ({result.correctCount}/{totalQuestions})
           </p>
         )}
@@ -74,7 +74,7 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
       </div>
 
       {words.length === 0 && (
-        <p className="text-center text-gray-400 py-8">단어를 불러오는 중...</p>
+        <p className="text-center text-gray-400 dark:text-gray-500 py-8">단어를 불러오는 중...</p>
       )}
 
       <div className="sticky bottom-4">
