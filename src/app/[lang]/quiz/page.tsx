@@ -28,7 +28,6 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answered, setAnswered] = useState<string | null>(null);
   const [wrongWordIds, setWrongWordIds] = useState<string[]>([]);
-  const [correctCount, setCorrectCount] = useState(0);
   const correctCountRef = useRef(0);
   const [date, setDate] = useState('');
 
@@ -50,7 +49,6 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
       const question = questions[currentIndex];
       if (answer === question.correctAnswer) {
         correctCountRef.current += 1;
-        setCorrectCount(correctCountRef.current);
       } else {
         setWrongWordIds((prev) =>
           prev.includes(question.wordId) ? prev : [...prev, question.wordId]
