@@ -23,12 +23,12 @@ const PREFERRED_VOICES: Record<string, string[]> = {
     'Mónica', 'Monica',
     'Microsoft Helena Desktop', 'Microsoft Pablo Desktop',
   ],
-  'pt-BR': [
-    'Microsoft Francisca Online (Natural) - Portuguese (Brazil)',
-    'Microsoft Antonio Online (Natural) - Portuguese (Brazil)',
-    'Google português do Brasil',
-    'Luciana',
-    'Microsoft Daniel Desktop',
+  'ko-KR': [
+    'Microsoft SunHi Online (Natural) - Korean (Korea)',
+    'Microsoft InJoon Online (Natural) - Korean (Korea)',
+    'Google 한국의',
+    'Yuna',
+    'Microsoft Heami Desktop',
   ],
 };
 

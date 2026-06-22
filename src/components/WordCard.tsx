@@ -13,15 +13,21 @@ function SpeakButton({
   onClick,
   label,
   size = 'md',
+  variant = 'foreign',
 }: {
   onClick: () => void;
   label: string;
   size?: 'sm' | 'md';
+  variant?: 'foreign' | 'ko';
 }) {
   const cls =
-    size === 'md'
-      ? 'w-11 h-11 text-base bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-600'
-      : 'w-9 h-9 text-sm bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-600 dark:text-gray-400';
+    variant === 'ko'
+      ? size === 'md'
+        ? 'w-11 h-11 text-base bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400'
+        : 'w-9 h-9 text-sm bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400'
+      : size === 'md'
+        ? 'w-11 h-11 text-base bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-600'
+        : 'w-9 h-9 text-sm bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-600 dark:text-gray-400';
 
   return (
     <button
@@ -54,7 +60,17 @@ export default function WordCard({ word, language }: WordCardProps) {
           {word.phonetic && (
             <p className="text-sm text-gray-400 dark:text-gray-500 mb-0.5">{word.phonetic}</p>
           )}
-          <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{word.meaningKo}</p>
+          <div className="flex items-center gap-2">
+            <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{word.meaningKo}</p>
+            {ttsSupported && (
+              <SpeakButton
+                onClick={() => speakText(word.meaningKo, 'ko-KR')}
+                label="한국어 뜻 듣기"
+                size="sm"
+                variant="ko"
+              />
+            )}
+          </div>
         </div>
         {ttsSupported && (
           <SpeakButton
@@ -74,18 +90,30 @@ export default function WordCard({ word, language }: WordCardProps) {
       <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-3.5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic leading-relaxed">
-              &ldquo;{word.example}&rdquo;
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">{word.exampleKo}</p>
+            <div className="flex items-start gap-2">
+              <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic leading-relaxed flex-1">
+                &ldquo;{word.example}&rdquo;
+              </p>
+              {ttsSupported && (
+                <SpeakButton
+                  onClick={() => speakText(word.example, langCode)}
+                  label="예문 발음 듣기"
+                  size="sm"
+                />
+              )}
+            </div>
+            <div className="flex items-center gap-2 mt-1.5">
+              <p className="text-xs text-gray-500 dark:text-gray-400 flex-1">{word.exampleKo}</p>
+              {ttsSupported && (
+                <SpeakButton
+                  onClick={() => speakText(word.exampleKo, 'ko-KR')}
+                  label="한국어 예문 듣기"
+                  size="sm"
+                  variant="ko"
+                />
+              )}
+            </div>
           </div>
-          {ttsSupported && (
-            <SpeakButton
-              onClick={() => speakText(word.example, langCode)}
-              label="예문 발음 듣기"
-              size="sm"
-            />
-          )}
         </div>
       </div>
     </div>
