@@ -2,22 +2,23 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import type { Language } from '@/lib/types';
-import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
-import { getSavedLanguage, setSavedLanguage } from '@/lib/storage';
-import { getTodayDate } from '@/lib/utils';
+import type { Language, Difficulty } from '@/lib/types';
+import { LANG_NAMES, LANG_FLAGS, DIFFICULTY_LABELS } from '@/lib/types';
+import { getSavedLanguage, setSavedLanguage, getSavedDifficulty, setSavedDifficulty } from '@/lib/storage';
+import { getTodayDate, DEFAULT_DIFFICULTY } from '@/lib/utils';
 
-const LANGUAGES: Language[] = ['en', 'es', 'pt'];
+const LANGUAGES: Language[] = ['en', 'es', 'ja'];
 
 const LANG_SUBTITLES: Record<Language, string> = {
   en: 'English · 영어',
   es: 'Español · 스페인어',
-  pt: 'Português · 포르투갈어',
+  ja: '日本語 · 일본어',
 };
 
 export default function HomePage() {
   const router = useRouter();
   const [lastLang, setLastLang] = useState<Language | null>(null);
+  const [difficulty, setDifficulty] = useState<Difficulty>(DEFAULT_DIFFICULTY);
   const [today] = useState(getTodayDate);
 
   useEffect(() => {
@@ -26,11 +27,18 @@ export default function HomePage() {
       setLastLang(saved);
       router.prefetch(`/${saved}`);
     }
+    const savedDiff = getSavedDifficulty();
+    if (savedDiff) setDifficulty(savedDiff);
   }, [router]);
 
   function handleLanguageSelect(lang: Language) {
     setSavedLanguage(lang);
     router.push(`/${lang}`);
+  }
+
+  function handleDifficultySelect(d: Difficulty) {
+    setDifficulty(d);
+    setSavedDifficulty(d);
   }
 
   const dateDisplay = today.replace(/-/g, '.');
@@ -96,6 +104,28 @@ export default function HomePage() {
             </svg>
           </button>
         ))}
+
+        {/* 난이도 선택 */}
+        <div className="mt-2">
+          <p className="text-center text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">
+            난이도
+          </p>
+          <div className="flex gap-2">
+            {DIFFICULTY_LABELS.map((d) => (
+              <button
+                key={d}
+                onClick={() => handleDifficultySelect(d)}
+                className={`flex-1 py-2.5 rounded-xl font-semibold text-sm transition-all ${
+                  difficulty === d
+                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/25'
+                    : 'bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 border-2 border-gray-100 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600'
+                }`}
+              >
+                {d}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

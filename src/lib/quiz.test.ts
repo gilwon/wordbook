@@ -4,7 +4,7 @@ import { getTodayWords } from '@/lib/words';
 import { allWords } from '@/data/index';
 
 describe('generateQuiz', () => {
-  const todayWords = getTodayWords('en', '2026-06-22');
+  const todayWords = getTodayWords('en', '2026-06-22', '중급');
   const quiz = generateQuiz(todayWords, allWords['en']);
 
   it('generates exactly 10 questions', () => {
@@ -64,7 +64,7 @@ describe('generateQuiz', () => {
   });
 
   it('generates different order for different days', () => {
-    const otherWords = getTodayWords('en', '2026-06-23');
+    const otherWords = getTodayWords('en', '2026-06-23', '중급');
     const quiz2 = generateQuiz(otherWords, allWords['en']);
     const ids1 = quiz.map((q) => q.id).join(',');
     const ids2 = quiz2.map((q) => q.id).join(',');

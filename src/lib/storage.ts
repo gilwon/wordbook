@@ -1,20 +1,20 @@
-import type { Language, QuizResult } from '@/lib/types';
-import { VALID_LANGS } from '@/lib/utils';
+import type { Language, Difficulty, QuizResult } from '@/lib/types';
+import { VALID_LANGS, DEFAULT_DIFFICULTY } from '@/lib/utils';
 
-const resultKey = (lang: Language, date: string) =>
-  `word-quiz-result-${lang}-${date}`;
+const resultKey = (lang: Language, difficulty: Difficulty, date: string) =>
+  `word-quiz-result-${lang}-${difficulty}-${date}`;
 
 export function saveQuizResult(result: QuizResult): void {
   try {
-    localStorage.setItem(resultKey(result.language, result.date), JSON.stringify(result));
+    localStorage.setItem(resultKey(result.language, result.difficulty, result.date), JSON.stringify(result));
   } catch {
     // quota exceeded or private browsing
   }
 }
 
-export function getQuizResult(language: Language, date: string): QuizResult | null {
+export function getQuizResult(language: Language, difficulty: Difficulty, date: string): QuizResult | null {
   try {
-    const stored = localStorage.getItem(resultKey(language, date));
+    const stored = localStorage.getItem(resultKey(language, difficulty, date));
     if (!stored) return null;
     return JSON.parse(stored) as QuizResult;
   } catch {
@@ -39,3 +39,23 @@ export function setSavedLanguage(language: Language): void {
     // quota exceeded or private browsing
   }
 }
+
+export function getSavedDifficulty(): Difficulty | null {
+  try {
+    const saved = localStorage.getItem('word-quiz-difficulty');
+    const valid: Difficulty[] = ['기초', '중급', '고급'];
+    if (saved && valid.includes(saved as Difficulty)) return saved as Difficulty;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+export function setSavedDifficulty(difficulty: Difficulty): void {
+  try {
+    localStorage.setItem('word-quiz-difficulty', difficulty);
+  } catch {
+    // quota exceeded or private browsing
+  }
+}
+

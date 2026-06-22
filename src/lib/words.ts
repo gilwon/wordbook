@@ -1,4 +1,4 @@
-import type { Language, Word } from '@/lib/types';
+import type { Language, Difficulty, Word } from '@/lib/types';
 import { allWords } from '@/data/index';
 
 export function hashString(str: string): number {
@@ -26,9 +26,9 @@ export function shuffleArray<T>(array: T[], seed: number): T[] {
   return arr;
 }
 
-export function getTodayWords(language: Language, date: string): Word[] {
-  const words = allWords[language];
-  const seed = hashString(`${language}-${date}`);
+export function getTodayWords(language: Language, date: string, difficulty: Difficulty): Word[] {
+  const words = allWords[language].filter(w => w.difficulty === difficulty);
+  const seed = hashString(`${language}-${difficulty}-${date}`);
   const shuffled = shuffleArray(words, seed);
   return shuffled.slice(0, 10);
 }

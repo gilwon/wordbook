@@ -2,11 +2,11 @@
 
 import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import type { Language, QuizResult, Word } from '@/lib/types';
+import type { Language, Difficulty, QuizResult, Word } from '@/lib/types';
 import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
-import { getQuizResult } from '@/lib/storage';
+import { getQuizResult, getSavedDifficulty } from '@/lib/storage';
 import { getTodayWords } from '@/lib/words';
-import { getTodayDate, VALID_LANGS } from '@/lib/utils';
+import { getTodayDate, VALID_LANGS, DEFAULT_DIFFICULTY } from '@/lib/utils';
 
 interface ScoreInfo {
   emoji: string;
@@ -28,20 +28,23 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
   const [date] = useState(getTodayDate);
   const [result, setResult] = useState<QuizResult | null>(null);
   const [wrongWords, setWrongWords] = useState<Word[]>([]);
+  const [difficulty, setDifficulty] = useState<Difficulty>(DEFAULT_DIFFICULTY);
 
   useEffect(() => {
     if (!VALID_LANGS.includes(lang as Language)) {
       router.replace('/');
       return;
     }
-    const quizResult = getQuizResult(lang as Language, date);
+    const d = getSavedDifficulty() ?? DEFAULT_DIFFICULTY;
+    setDifficulty(d);
+    const quizResult = getQuizResult(lang as Language, d, date);
     if (!quizResult) {
       router.replace(`/${lang}`);
       return;
     }
     setResult(quizResult);
 
-    const todayWords = getTodayWords(lang as Language, date);
+    const todayWords = getTodayWords(lang as Language, date, d);
     const wrong = todayWords.filter((w) => quizResult.wrongWordIds.includes(w.id));
     setWrongWords(wrong);
   }, [lang, router, date]);
@@ -56,9 +59,16 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
   return (
     <div className="flex flex-col gap-6">
       {/* Header */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         <span className="text-xl">{LANG_FLAGS[language]}</span>
         <span className="font-bold text-gray-900 dark:text-gray-100">{LANG_NAMES[language]} 퀴즈 결과</span>
+        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
+          difficulty === '기초' ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
+          : difficulty === '고급' ? 'bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
+          : 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400'
+        }`}>
+          {difficulty}
+        </span>
       </div>
 
       {/* Score card */}

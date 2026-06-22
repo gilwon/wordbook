@@ -45,32 +45,45 @@ describe('shuffleArray', () => {
 
 describe('getTodayWords', () => {
   it('returns exactly 10 words', () => {
-    const words = getTodayWords('en', '2026-06-22');
+    const words = getTodayWords('en', '2026-06-22', '중급');
     expect(words).toHaveLength(10);
   });
 
   it('returns words of correct language', () => {
-    const words = getTodayWords('es', '2026-06-22');
+    const words = getTodayWords('es', '2026-06-22', '중급');
     words.forEach((w) => expect(w.language).toBe('es'));
   });
 
-  it('returns same words for same date and language', () => {
-    const a = getTodayWords('en', '2026-06-22');
-    const b = getTodayWords('en', '2026-06-22');
+  it('returns words of correct difficulty', () => {
+    const words = getTodayWords('en', '2026-06-22', '기초');
+    words.forEach((w) => expect(w.difficulty).toBe('기초'));
+  });
+
+  it('returns same words for same date, language, and difficulty', () => {
+    const a = getTodayWords('en', '2026-06-22', '중급');
+    const b = getTodayWords('en', '2026-06-22', '중급');
     expect(a.map((w) => w.id)).toEqual(b.map((w) => w.id));
   });
 
   it('returns different words for different dates', () => {
-    const a = getTodayWords('en', '2026-06-22');
-    const b = getTodayWords('en', '2026-06-23');
+    const a = getTodayWords('en', '2026-06-22', '중급');
+    const b = getTodayWords('en', '2026-06-23', '중급');
+    const aIds = a.map((w) => w.id).join(',');
+    const bIds = b.map((w) => w.id).join(',');
+    expect(aIds).not.toBe(bIds);
+  });
+
+  it('returns different words for different difficulties on same date', () => {
+    const a = getTodayWords('en', '2026-06-22', '기초');
+    const b = getTodayWords('en', '2026-06-22', '고급');
     const aIds = a.map((w) => w.id).join(',');
     const bIds = b.map((w) => w.id).join(',');
     expect(aIds).not.toBe(bIds);
   });
 
   it('returns words that exist in full word list', () => {
-    const words = getTodayWords('pt', '2026-06-22');
-    const allPtIds = allWords.pt.map((w) => w.id);
-    words.forEach((w) => expect(allPtIds).toContain(w.id));
+    const words = getTodayWords('ja', '2026-06-22', '중급');
+    const allJaIds = allWords.ja.map((w) => w.id);
+    words.forEach((w) => expect(allJaIds).toContain(w.id));
   });
 });

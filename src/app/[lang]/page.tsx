@@ -2,19 +2,26 @@
 
 import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import type { Language, Word, QuizResult } from '@/lib/types';
+import type { Language, Difficulty, Word, QuizResult } from '@/lib/types';
 import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
 import { getTodayWords } from '@/lib/words';
-import { getQuizResult } from '@/lib/storage';
-import { getTodayDate, VALID_LANGS } from '@/lib/utils';
+import { getQuizResult, getSavedDifficulty } from '@/lib/storage';
+import { getTodayDate, VALID_LANGS, DEFAULT_DIFFICULTY } from '@/lib/utils';
 import WordCard from '@/components/WordCard';
 import ProgressBar from '@/components/ProgressBar';
+
+const DIFFICULTY_COLORS: Record<Difficulty, string> = {
+  기초: 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400',
+  중급: 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
+  고급: 'bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400',
+};
 
 export default function StudyPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params);
   const router = useRouter();
   const [words, setWords] = useState<Word[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
+  const [difficulty, setDifficulty] = useState<Difficulty>(DEFAULT_DIFFICULTY);
   const [date] = useState(getTodayDate);
 
   useEffect(() => {
@@ -22,9 +29,11 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
       router.replace('/');
       return;
     }
-    const todayWords = getTodayWords(lang as Language, date);
+    const d = getSavedDifficulty() ?? DEFAULT_DIFFICULTY;
+    setDifficulty(d);
+    const todayWords = getTodayWords(lang as Language, date, d);
     setWords(todayWords);
-    const quizResult = getQuizResult(lang as Language, date);
+    const quizResult = getQuizResult(lang as Language, d, date);
     setResult(quizResult);
   }, [lang, router, date]);
 
@@ -52,6 +61,9 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
           <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 truncate">
             {LANG_NAMES[language]}
           </h1>
+          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full shrink-0 ${DIFFICULTY_COLORS[difficulty]}`}>
+            {difficulty}
+          </span>
           <span className="text-sm text-gray-400 dark:text-gray-500 hidden sm:block">오늘의 단어</span>
         </div>
         {words.length > 0 && (

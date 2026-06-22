@@ -2,12 +2,12 @@
 
 import { use, useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import type { Language, QuizQuestion } from '@/lib/types';
+import type { Language, Difficulty, QuizQuestion } from '@/lib/types';
 import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
 import { getTodayWords } from '@/lib/words';
 import { generateQuiz } from '@/lib/quiz';
-import { saveQuizResult } from '@/lib/storage';
-import { getTodayDate, VALID_LANGS } from '@/lib/utils';
+import { saveQuizResult, getSavedDifficulty } from '@/lib/storage';
+import { getTodayDate, VALID_LANGS, DEFAULT_DIFFICULTY } from '@/lib/utils';
 import { allWords } from '@/data/index';
 import QuizQuestionCard from '@/components/QuizQuestion';
 import ProgressBar from '@/components/ProgressBar';
@@ -21,6 +21,7 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
   const [wrongWordIds, setWrongWordIds] = useState<string[]>([]);
   const correctCountRef = useRef(0);
   const [date] = useState(getTodayDate);
+  const difficultyRef = useRef<Difficulty>(DEFAULT_DIFFICULTY);
   const nextBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -28,7 +29,9 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
       router.replace('/');
       return;
     }
-    const todayWords = getTodayWords(lang as Language, date);
+    const d = getSavedDifficulty() ?? DEFAULT_DIFFICULTY;
+    difficultyRef.current = d;
+    const todayWords = getTodayWords(lang as Language, date, d);
     const quiz = generateQuiz(todayWords, allWords[lang as Language]);
     setQuestions(quiz);
     setCurrentIndex(0);
@@ -48,7 +51,6 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
           prev.includes(question.wordId) ? prev : [...prev, question.wordId]
         );
       }
-      // Scroll next button into view after a brief delay
       setTimeout(() => {
         nextBtnRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 300);
@@ -65,6 +67,7 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
       const scorePercent = total > 0 ? Math.round((finalCorrect / total) * 100) : 0;
       saveQuizResult({
         language: lang as Language,
+        difficulty: difficultyRef.current,
         date,
         correctCount: finalCorrect,
         scorePercent,

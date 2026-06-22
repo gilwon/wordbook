@@ -11,6 +11,7 @@ export const wordsEs: Word[] = [
     explanationKo: "행복하고 기쁜 감정 상태",
     example: "La alegría de los niños es contagiosa.",
     exampleKo: "아이들의 기쁨은 전염성이 있다.",
+    difficulty: "기초",
   },
   {
     id: "es-002",
@@ -22,6 +23,7 @@ export const wordsEs: Word[] = [
     explanationKo: "선하고 친절한 성품이나 행동",
     example: "Su bondad nos conmovió profundamente.",
     exampleKo: "그의 친절함이 우리를 깊이 감동시켰다.",
+    difficulty: "중급",
   },
   {
     id: "es-003",
@@ -33,6 +35,7 @@ export const wordsEs: Word[] = [
     explanationKo: "발로 한 걸음씩 이동하다",
     example: "Me gusta caminar por el parque cada mañana.",
     exampleKo: "나는 매일 아침 공원을 걷는 것을 좋아한다.",
+    difficulty: "기초",
   },
   {
     id: "es-004",
@@ -44,6 +47,7 @@ export const wordsEs: Word[] = [
     explanationKo: "피로를 회복하기 위해 활동을 멈추다",
     example: "Necesito descansar un poco después del trabajo.",
     exampleKo: "일이 끝난 후 좀 쉬어야 한다.",
+    difficulty: "기초",
   },
   {
     id: "es-005",
@@ -55,6 +59,7 @@ export const wordsEs: Word[] = [
     explanationKo: "무언가가 오거나 일어나기를 기다리다",
     example: "Voy a esperar aquí hasta que llegues.",
     exampleKo: "네가 도착할 때까지 여기서 기다릴게.",
+    difficulty: "기초",
   },
   {
     id: "es-006",
@@ -66,6 +71,7 @@ export const wordsEs: Word[] = [
     explanationKo: "삶에서 만족과 기쁨을 느끼는 상태",
     example: "La felicidad está en las pequeñas cosas.",
     exampleKo: "행복은 작은 것에 있다.",
+    difficulty: "기초",
   },
   {
     id: "es-007",
@@ -77,6 +83,7 @@ export const wordsEs: Word[] = [
     explanationKo: "보기에 매우 아름답고 매력적인",
     example: "El paisaje de la montaña es hermoso.",
     exampleKo: "산의 풍경이 아름답다.",
+    difficulty: "기초",
   },
   {
     id: "es-008",
@@ -88,6 +95,7 @@ export const wordsEs: Word[] = [
     explanationKo: "큰 가치나 의미를 가지고 있는",
     example: "Es importante estudiar todos los días.",
     exampleKo: "매일 공부하는 것이 중요하다.",
+    difficulty: "기초",
   },
   {
     id: "es-009",
@@ -99,6 +107,7 @@ export const wordsEs: Word[] = [
     explanationKo: "즐겁게 놀거나 경기를 하다",
     example: "Los niños juegan en el parque cada tarde.",
     exampleKo: "아이들은 매일 오후 공원에서 논다.",
+    difficulty: "기초",
   },
   {
     id: "es-010",
@@ -110,6 +119,7 @@ export const wordsEs: Word[] = [
     explanationKo: "원하는 대로 행동하거나 생각할 수 있는 권리",
     example: "La libertad es un derecho fundamental.",
     exampleKo: "자유는 기본적인 권리이다.",
+    difficulty: "기초",
   },
   {
     id: "es-011",
@@ -121,6 +131,7 @@ export const wordsEs: Word[] = [
     explanationKo: "매우 인상적이고 감탄스러운",
     example: "Fue un viaje maravilloso lleno de aventuras.",
     exampleKo: "모험으로 가득한 놀라운 여행이었다.",
+    difficulty: "중급",
   },
   {
     id: "es-012",
@@ -132,6 +143,7 @@ export const wordsEs: Word[] = [
     explanationKo: "동식물과 지구의 자연 환경",
     example: "Me encanta pasar tiempo en la naturaleza.",
     exampleKo: "나는 자연 속에서 시간을 보내는 것을 좋아한다.",
+    difficulty: "중급",
   },
   {
     id: "es-013",
@@ -143,6 +155,7 @@ export const wordsEs: Word[] = [
     explanationKo: "어려운 상황을 평온하게 견디는 능력",
     example: "Necesitas paciencia para aprender un idioma.",
     exampleKo: "언어를 배우려면 인내심이 필요하다.",
+    difficulty: "중급",
   },
   {
     id: "es-014",
@@ -154,6 +167,7 @@ export const wordsEs: Word[] = [
     explanationKo: "과거의 것을 마음속에서 다시 떠올리다",
     example: "Siempre recordaré ese hermoso momento.",
     exampleKo: "나는 그 아름다운 순간을 항상 기억할 것이다.",
+    difficulty: "중급",
   },
   {
     id: "es-015",
@@ -165,6 +179,7 @@ export const wordsEs: Word[] = [
     explanationKo: "자는 동안 꾸는 꿈 또는 미래의 희망",
     example: "Tuve un sueño muy hermoso anoche.",
     exampleKo: "어젯밤 매우 아름다운 꿈을 꿨다.",
+    difficulty: "중급",
   },
   {
     id: "es-016",
@@ -176,6 +191,7 @@ export const wordsEs: Word[] = [
     explanationKo: "평화롭고 아무런 소란이 없는",
     example: "Este lugar es muy tranquilo y relajante.",
     exampleKo: "이 곳은 매우 조용하고 편안하다.",
+    difficulty: "기초",
   },
   {
     id: "es-017",
@@ -187,6 +203,7 @@ export const wordsEs: Word[] = [
     explanationKo: "위험을 두려워하지 않고 맞서는",
     example: "El bombero es valiente y siempre ayuda.",
     exampleKo: "소방관은 용감하고 항상 도움을 준다.",
+    difficulty: "기초",
   },
   {
     id: "es-018",
@@ -198,6 +215,7 @@ export const wordsEs: Word[] = [
     explanationKo: "공부나 경험을 통해 새로운 것을 알게 되다",
     example: "Me encanta aprender nuevos idiomas.",
     exampleKo: "나는 새로운 언어를 배우는 것을 좋아한다.",
+    difficulty: "기초",
   },
   {
     id: "es-019",
@@ -209,6 +227,7 @@ export const wordsEs: Word[] = [
     explanationKo: "밝게 빛나거나 매우 뛰어난 능력을 가진",
     example: "Tiene una mente brillante para las matemáticas.",
     exampleKo: "그는 수학에서 빛나는 두뇌를 가지고 있다.",
+    difficulty: "중급",
   },
   {
     id: "es-020",
@@ -220,6 +239,7 @@ export const wordsEs: Word[] = [
     explanationKo: "기쁨과 즐거움을 느끼다",
     example: "Me gusta disfrutar de la música clásica.",
     exampleKo: "나는 클래식 음악을 즐기는 것을 좋아한다.",
+    difficulty: "기초",
   },
   {
     id: "es-021",
@@ -231,6 +251,7 @@ export const wordsEs: Word[] = [
     explanationKo: "활동하는 데 필요한 힘과 활력",
     example: "Los niños tienen mucha energía para jugar.",
     exampleKo: "아이들은 놀기 위한 에너지가 넘친다.",
+    difficulty: "기초",
   },
   {
     id: "es-022",
@@ -242,6 +263,7 @@ export const wordsEs: Word[] = [
     explanationKo: "아낌없이 베풀고 주는",
     example: "Es una persona muy generosa con todos.",
     exampleKo: "그는 모두에게 매우 관대한 사람이다.",
+    difficulty: "중급",
   },
   {
     id: "es-023",
@@ -253,6 +275,7 @@ export const wordsEs: Word[] = [
     explanationKo: "거짓 없이 진실되고 도덕적인",
     example: "Sé honesto con tus propios sentimientos.",
     exampleKo: "자신의 감정에 정직해라.",
+    difficulty: "기초",
   },
   {
     id: "es-024",
@@ -264,6 +287,7 @@ export const wordsEs: Word[] = [
     explanationKo: "누군가를 알거나 어떤 장소를 방문하다",
     example: "Me gustaría conocer nuevas personas.",
     exampleKo: "나는 새로운 사람들을 알고 싶다.",
+    difficulty: "중급",
   },
   {
     id: "es-025",
@@ -275,6 +299,7 @@ export const wordsEs: Word[] = [
     explanationKo: "누군가나 무언가를 보살피고 관리하다",
     example: "Debemos cuidar el medio ambiente.",
     exampleKo: "우리는 환경을 돌봐야 한다.",
+    difficulty: "중급",
   },
   {
     id: "es-026",
@@ -286,6 +311,7 @@ export const wordsEs: Word[] = [
     explanationKo: "신체적 또는 정신적인 힘과 능력",
     example: "Necesitas fuerza para superar los obstáculos.",
     exampleKo: "장애물을 극복하려면 힘이 필요하다.",
+    difficulty: "중급",
   },
   {
     id: "es-027",
@@ -297,6 +323,7 @@ export const wordsEs: Word[] = [
     explanationKo: "기억에서 사라지거나 기억하지 못하다",
     example: "No puedo olvidar ese día tan especial.",
     exampleKo: "그 특별했던 날을 잊을 수 없다.",
+    difficulty: "중급",
   },
   {
     id: "es-028",
@@ -308,6 +335,7 @@ export const wordsEs: Word[] = [
     explanationKo: "누군가를 깊이 사랑하거나 무언가를 원하다",
     example: "Te quiero mucho, más que a nada.",
     exampleKo: "무엇보다 너를 많이 사랑해.",
+    difficulty: "기초",
   },
   {
     id: "es-029",
@@ -319,6 +347,7 @@ export const wordsEs: Word[] = [
     explanationKo: "세상에서 오직 하나뿐인 특별한",
     example: "Eres único en este mundo tan grande.",
     exampleKo: "넌 이 넓은 세상에서 유일한 존재야.",
+    difficulty: "기초",
   },
   {
     id: "es-030",
@@ -330,8 +359,8 @@ export const wordsEs: Word[] = [
     explanationKo: "크기나 능력이 점점 커지고 발전하다",
     example: "Los niños crecen muy rápido.",
     exampleKo: "아이들은 매우 빠르게 성장한다.",
+    difficulty: "기초",
   },
-  // 일상
   {
     id: "es-031",
     language: "es",
@@ -342,6 +371,7 @@ export const wordsEs: Word[] = [
     explanationKo: "매일 반복하는 습관적인 활동의 흐름",
     example: "Tengo una rutina estricta cada mañana.",
     exampleKo: "나는 매일 아침 엄격한 일과가 있다.",
+    difficulty: "기초",
   },
   {
     id: "es-032",
@@ -353,6 +383,7 @@ export const wordsEs: Word[] = [
     explanationKo: "사람들이 함께 사는 지역이나 구역",
     example: "Vivo en un vecindario muy tranquilo.",
     exampleKo: "나는 매우 조용한 동네에 산다.",
+    difficulty: "중급",
   },
   {
     id: "es-033",
@@ -364,6 +395,7 @@ export const wordsEs: Word[] = [
     explanationKo: "집에서 정기적으로 해야 하는 가사 작업",
     example: "Lavar los platos es mi tarea menos favorita.",
     exampleKo: "설거지는 내가 가장 싫어하는 집안일이다.",
+    difficulty: "중급",
   },
   {
     id: "es-034",
@@ -375,6 +407,7 @@ export const wordsEs: Word[] = [
     explanationKo: "사용 가능한 돈을 계획적으로 배분한 것",
     example: "Necesito ajustar mi presupuesto mensual.",
     exampleKo: "월별 예산을 조정해야 한다.",
+    difficulty: "고급",
   },
   {
     id: "es-035",
@@ -386,6 +419,7 @@ export const wordsEs: Word[] = [
     explanationKo: "활동이나 업무의 시간 계획표",
     example: "Mi horario de trabajo es muy ocupado.",
     exampleKo: "내 업무 일정표는 매우 바쁘다.",
+    difficulty: "중급",
   },
   {
     id: "es-036",
@@ -397,8 +431,8 @@ export const wordsEs: Word[] = [
     explanationKo: "근처에 사는 사람",
     example: "Mi vecino siempre me ayuda cuando lo necesito.",
     exampleKo: "내 이웃은 내가 필요할 때 항상 도와준다.",
+    difficulty: "기초",
   },
-  // 비즈니스
   {
     id: "es-037",
     language: "es",
@@ -409,6 +443,7 @@ export const wordsEs: Word[] = [
     explanationKo: "합의에 이르기 위해 서로 의견을 나누다",
     example: "Vamos a negociar los términos del acuerdo.",
     exampleKo: "합의 조건에 대해 협상할 것이다.",
+    difficulty: "중급",
   },
   {
     id: "es-038",
@@ -420,6 +455,7 @@ export const wordsEs: Word[] = [
     explanationKo: "사업 활동으로 벌어들이는 총 수입",
     example: "Los ingresos de la empresa aumentaron este año.",
     exampleKo: "회사의 수익이 올해 증가했다.",
+    difficulty: "고급",
   },
   {
     id: "es-039",
@@ -431,6 +467,7 @@ export const wordsEs: Word[] = [
     explanationKo: "작업을 완료해야 하는 기한",
     example: "El plazo para entregar el proyecto es mañana.",
     exampleKo: "프로젝트 제출 마감일은 내일이다.",
+    difficulty: "중급",
   },
   {
     id: "es-040",
@@ -442,6 +479,7 @@ export const wordsEs: Word[] = [
     explanationKo: "회의에서 논의할 주제의 목록",
     example: "Revisa la agenda antes de la reunión.",
     exampleKo: "회의 전에 안건을 검토해라.",
+    difficulty: "중급",
   },
   {
     id: "es-041",
@@ -453,6 +491,7 @@ export const wordsEs: Word[] = [
     explanationKo: "계획이나 아이디어를 공식적으로 제안한 문서",
     example: "Presentó una propuesta de negocio innovadora.",
     exampleKo: "혁신적인 사업 제안서를 발표했다.",
+    difficulty: "중급",
   },
   {
     id: "es-042",
@@ -464,6 +503,7 @@ export const wordsEs: Word[] = [
     explanationKo: "두 회사나 조직이 하나로 합쳐지는 것",
     example: "La fusión de las dos empresas fue un éxito.",
     exampleKo: "두 회사의 합병은 성공적이었다.",
+    difficulty: "고급",
   },
   {
     id: "es-043",
@@ -475,6 +515,7 @@ export const wordsEs: Word[] = [
     explanationKo: "양측이 서명한 법적 합의 문서",
     example: "Firmamos el contrato con el nuevo cliente.",
     exampleKo: "새 고객과 계약서에 서명했다.",
+    difficulty: "고급",
   },
   {
     id: "es-044",
@@ -486,8 +527,8 @@ export const wordsEs: Word[] = [
     explanationKo: "회사의 주식을 소유한 사람",
     example: "Los accionistas aprobaron el nuevo plan estratégico.",
     exampleKo: "주주들이 새 전략 계획을 승인했다.",
+    difficulty: "고급",
   },
-  // 여행
   {
     id: "es-045",
     language: "es",
@@ -498,6 +539,7 @@ export const wordsEs: Word[] = [
     explanationKo: "여행 중 방문할 장소와 시간을 정리한 계획",
     example: "Nuestro itinerario incluye tres países distintos.",
     exampleKo: "우리 여행 일정에는 세 개의 나라가 포함된다.",
+    difficulty: "고급",
   },
   {
     id: "es-046",
@@ -509,6 +551,7 @@ export const wordsEs: Word[] = [
     explanationKo: "여행 중 머물 장소나 시설",
     example: "Reservamos un alojamiento cerca del centro.",
     exampleKo: "도심 근처의 숙박 시설을 예약했다.",
+    difficulty: "고급",
   },
   {
     id: "es-047",
@@ -520,6 +563,7 @@ export const wordsEs: Word[] = [
     explanationKo: "입국 시 반입 물품을 검사하는 공식 기관",
     example: "Tuvimos que pasar por la aduana al llegar.",
     exampleKo: "도착 시 세관을 통과해야 했다.",
+    difficulty: "고급",
   },
   {
     id: "es-048",
@@ -531,6 +575,7 @@ export const wordsEs: Word[] = [
     explanationKo: "어떤 장소를 떠나는 행동",
     example: "La salida del vuelo es a las ocho de la mañana.",
     exampleKo: "항공편 출발은 오전 8시이다.",
+    difficulty: "중급",
   },
   {
     id: "es-049",
@@ -542,6 +587,7 @@ export const wordsEs: Word[] = [
     explanationKo: "여행지에서 기억을 남기기 위해 사는 물건",
     example: "Compré un recuerdo para toda mi familia.",
     exampleKo: "가족 모두를 위해 기념품을 샀다.",
+    difficulty: "고급",
   },
   {
     id: "es-050",
@@ -553,8 +599,8 @@ export const wordsEs: Word[] = [
     explanationKo: "역사적으로 중요하거나 유명한 건물이나 구조물",
     example: "Visitamos el monumento histórico de la ciudad.",
     exampleKo: "도시의 역사적 기념물을 방문했다.",
+    difficulty: "고급",
   },
-  // TOEIC
   {
     id: "es-051",
     language: "es",
@@ -565,6 +611,7 @@ export const wordsEs: Word[] = [
     explanationKo: "어떤 사건이나 행동이 일어난 이후에",
     example: "El informe fue revisado y aprobado posteriormente.",
     exampleKo: "보고서는 검토된 후 승인되었다.",
+    difficulty: "고급",
   },
   {
     id: "es-052",
@@ -576,6 +623,7 @@ export const wordsEs: Word[] = [
     explanationKo: "손실이나 피해에 대해 대가를 지불하다",
     example: "La empresa compensará a los empleados afectados.",
     exampleKo: "회사는 피해를 입은 직원들에게 보상할 것이다.",
+    difficulty: "고급",
   },
   {
     id: "es-053",
@@ -587,6 +635,7 @@ export const wordsEs: Word[] = [
     explanationKo: "계획이나 결정을 실제로 실행하다",
     example: "Debemos implementar la nueva política de inmediato.",
     exampleKo: "새 정책을 즉시 시행해야 한다.",
+    difficulty: "고급",
   },
   {
     id: "es-054",
@@ -598,6 +647,7 @@ export const wordsEs: Word[] = [
     explanationKo: "제공된 서비스나 상품에 대한 청구 명세서",
     example: "Por favor, envíe la factura antes del viernes.",
     exampleKo: "금요일 전까지 청구서를 보내주세요.",
+    difficulty: "고급",
   },
   {
     id: "es-055",
@@ -609,6 +659,7 @@ export const wordsEs: Word[] = [
     explanationKo: "본 단계 전에 먼저 이루어지는",
     example: "Los resultados preliminares son muy positivos.",
     exampleKo: "예비 결과가 매우 긍정적이다.",
+    difficulty: "고급",
   },
   {
     id: "es-056",
@@ -620,6 +671,7 @@ export const wordsEs: Word[] = [
     explanationKo: "정부나 기업의 재정이나 세금에 관한",
     example: "El año fiscal de la empresa termina en diciembre.",
     exampleKo: "회사의 회계 연도는 12월에 끝난다.",
+    difficulty: "고급",
   },
   {
     id: "es-057",
@@ -631,6 +683,7 @@ export const wordsEs: Word[] = [
     explanationKo: "노력이나 비용을 들여 무언가를 얻다",
     example: "La empresa planea adquirir nuevas tecnologías.",
     exampleKo: "회사는 새 기술을 획득할 계획이다.",
+    difficulty: "고급",
   },
   {
     id: "es-058",
@@ -642,6 +695,7 @@ export const wordsEs: Word[] = [
     explanationKo: "더 큰 회사가 통제하는 소규모 회사",
     example: "La subsidiaria opera de forma independiente.",
     exampleKo: "자회사는 독립적으로 운영된다.",
+    difficulty: "고급",
   },
   {
     id: "es-059",
@@ -653,6 +707,7 @@ export const wordsEs: Word[] = [
     explanationKo: "특정 목적을 위해 사용한 돈",
     example: "El gasto anual en formación ha aumentado.",
     exampleKo: "교육 관련 연간 지출이 증가했다.",
+    difficulty: "고급",
   },
   {
     id: "es-060",
@@ -664,5 +719,6 @@ export const wordsEs: Word[] = [
     explanationKo: "사실이나 상황의 존재를 공식적으로 인정하다",
     example: "Reconoció su error ante toda la empresa.",
     exampleKo: "그는 회사 전체 앞에서 자신의 실수를 인정했다.",
+    difficulty: "고급",
   },
 ];
