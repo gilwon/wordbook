@@ -28,6 +28,7 @@ function getScoreEmoji(percent: number): string {
 export default function ResultPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params);
   const router = useRouter();
+  const [date] = useState(getTodayDate);
   const [result, setResult] = useState<QuizResult | null>(null);
   const [wrongWords, setWrongWords] = useState<Word[]>([]);
 
@@ -36,18 +37,17 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
       router.replace('/');
       return;
     }
-    const today = getTodayDate();
-    const quizResult = getQuizResult(lang as Language, today);
+    const quizResult = getQuizResult(lang as Language, date);
     if (!quizResult) {
       router.replace(`/${lang}`);
       return;
     }
     setResult(quizResult);
 
-    const todayWords = getTodayWords(lang as Language, today);
+    const todayWords = getTodayWords(lang as Language, date);
     const wrong = todayWords.filter((w) => quizResult.wrongWordIds.includes(w.id));
     setWrongWords(wrong);
-  }, [lang, router]);
+  }, [lang, router, date]);
 
   if (!VALID_LANGS.includes(lang as Language)) return null;
   if (!result) return null;
