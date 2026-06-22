@@ -10,6 +10,23 @@ interface WordCardProps {
   language: Language;
 }
 
+type KoPart = { text: string; segIndex: number | null };
+
+function parseKoParts(exampleKo: string, segments: { ko: string }[]): KoPart[] {
+  const parts: KoPart[] = [];
+  let remaining = exampleKo;
+  for (let i = 0; i < segments.length; i++) {
+    const ko = segments[i].ko;
+    const idx = remaining.indexOf(ko);
+    if (idx === -1) return [{ text: exampleKo, segIndex: null }];
+    if (idx > 0) parts.push({ text: remaining.slice(0, idx), segIndex: null });
+    parts.push({ text: ko, segIndex: i });
+    remaining = remaining.slice(idx + ko.length);
+  }
+  if (remaining) parts.push({ text: remaining, segIndex: null });
+  return parts;
+}
+
 function SpeakButton({ onClick, label, size = 'md' }: { onClick: () => void; label: string; size?: 'sm' | 'md' }) {
   const cls =
     size === 'md'
@@ -116,17 +133,21 @@ export default function WordCard({ word, language }: WordCardProps) {
             {/* Korean translation */}
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">
               {word.exampleSegments
-                ? word.exampleSegments.map((seg, i) => (
-                    <span
-                      key={i}
-                      className={`transition-colors cursor-pointer ${highlightCls(i)}`}
-                      onMouseEnter={() => setHoveredIndex(i)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                      onTouchStart={() => handleTouchSegment(i)}
-                    >
-                      {seg.ko}
-                    </span>
-                  ))
+                ? parseKoParts(word.exampleKo, word.exampleSegments).map((part, i) =>
+                    part.segIndex !== null ? (
+                      <span
+                        key={i}
+                        className={`transition-colors cursor-pointer ${highlightCls(part.segIndex)}`}
+                        onMouseEnter={() => setHoveredIndex(part.segIndex!)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        onTouchStart={() => handleTouchSegment(part.segIndex!)}
+                      >
+                        {part.text}
+                      </span>
+                    ) : (
+                      <span key={i}>{part.text}</span>
+                    )
+                  )
                 : word.exampleKo}
             </p>
           </div>
