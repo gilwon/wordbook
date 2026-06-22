@@ -57,8 +57,26 @@ export default function WordCard({ word, language }: WordCardProps) {
               {word.partOfSpeech}
             </span>
           </div>
-          {word.phonetic && (
-            <p className="text-sm text-gray-400 dark:text-gray-500 mb-0.5">{word.phonetic}</p>
+          {(word.phonetic || word.pronunciationKo) && (
+            <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+              {word.phonetic && (
+                <span className="text-sm text-gray-400 dark:text-gray-500">{word.phonetic}</span>
+              )}
+              {word.pronunciationKo && (
+                <>
+                  {word.phonetic && <span className="text-gray-300 dark:text-gray-600">·</span>}
+                  <span className="text-sm text-indigo-400 dark:text-indigo-500 font-medium">{word.pronunciationKo}</span>
+                  {ttsSupported && (
+                    <SpeakButton
+                      onClick={() => speakText(word.pronunciationKo!, 'ko-KR')}
+                      label="한국어 발음 듣기"
+                      size="sm"
+                      variant="ko"
+                    />
+                  )}
+                </>
+              )}
+            </div>
           )}
           <div className="flex items-center gap-2">
             <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{word.meaningKo}</p>

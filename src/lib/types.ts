@@ -7,6 +7,7 @@ export interface Word {
   language: Language;
   word: string;
   phonetic?: string;
+  pronunciationKo?: string;
   meaningKo: string;
   partOfSpeech: string;
   explanationKo: string;
