@@ -1,4 +1,5 @@
 import type { Word, QuizQuestion, QuizType } from '@/lib/types';
+import { LANG_NAMES } from '@/lib/types';
 import { shuffleArray } from '@/lib/words';
 
 function buildMeaningChoiceQuestion(
@@ -6,12 +7,21 @@ function buildMeaningChoiceQuestion(
   allWords: Word[],
   index: number
 ): QuizQuestion {
-  const distractors = shuffleArray(
+  const others = shuffleArray(
     allWords.filter((w) => w.id !== word.id),
     index * 31 + 7
-  )
-    .slice(0, 3)
-    .map((w) => w.meaningKo);
+  );
+
+  const distractors: string[] = [];
+  for (const w of others) {
+    if (distractors.length >= 3) break;
+    if (w.meaningKo !== word.meaningKo && !distractors.includes(w.meaningKo)) {
+      distractors.push(w.meaningKo);
+    }
+  }
+  while (distractors.length < 3) {
+    distractors.push(`선택지 ${distractors.length + 2}`);
+  }
 
   const options = shuffleArray(
     [word.meaningKo, ...distractors],
@@ -33,24 +43,28 @@ function buildWordChoiceQuestion(
   allWords: Word[],
   index: number
 ): QuizQuestion {
-  const distractors = shuffleArray(
+  const others = shuffleArray(
     allWords.filter((w) => w.id !== word.id),
     index * 41 + 11
-  )
-    .slice(0, 3)
-    .map((w) => w.word);
+  );
+
+  const distractors: string[] = [];
+  for (const w of others) {
+    if (distractors.length >= 3) break;
+    if (w.word !== word.word && !distractors.includes(w.word)) {
+      distractors.push(w.word);
+    }
+  }
+  while (distractors.length < 3) {
+    distractors.push(`option${distractors.length + 2}`);
+  }
 
   const options = shuffleArray(
     [word.word, ...distractors],
     index * 23 + 5
   );
 
-  const langName =
-    word.language === 'en'
-      ? '영어'
-      : word.language === 'es'
-      ? '스페인어'
-      : '포르투갈어';
+  const langName = LANG_NAMES[word.language];
 
   return {
     id: `q-${word.id}-wc`,
@@ -67,7 +81,8 @@ function buildFillBlankQuestion(
   allWords: Word[],
   index: number
 ): QuizQuestion {
-  const regex = new RegExp(word.word, 'i');
+  const escaped = word.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(escaped, 'i');
   const questionText = word.example.replace(regex, '___');
 
   const distractors = shuffleArray(
