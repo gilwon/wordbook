@@ -138,7 +138,7 @@ export const wordsEs: Word[] = [
     meaningKo: "기억하다",
     partOfSpeech: "동사",
     explanationKo: "과거의 것을 마음속에서 다시 떠올리다",
-    example: "Siempre recordar ese hermoso momento.",
+    example: "Siempre recordaré ese hermoso momento.",
     exampleKo: "나는 그 아름다운 순간을 항상 기억할 것이다.",
   },
   {
