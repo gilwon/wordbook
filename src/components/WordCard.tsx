@@ -66,14 +66,6 @@ export default function WordCard({ word, language }: WordCardProps) {
                 <>
                   {word.phonetic && <span className="text-gray-300 dark:text-gray-600">·</span>}
                   <span className="text-sm text-indigo-400 dark:text-indigo-500 font-medium">{word.pronunciationKo}</span>
-                  {ttsSupported && (
-                    <SpeakButton
-                      onClick={() => speakText(word.pronunciationKo!, 'ko-KR')}
-                      label="한국어 발음 듣기"
-                      size="sm"
-                      variant="ko"
-                    />
-                  )}
                 </>
               )}
             </div>
