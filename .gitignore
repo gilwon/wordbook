@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI
+quiz.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+NOTES.md
+PLANNING.md
+.superpowers/
+docs/
