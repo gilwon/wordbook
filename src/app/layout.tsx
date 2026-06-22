@@ -5,9 +5,9 @@ import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
 
 export const metadata: Metadata = {
   title: '단어 퀴즈 | 매일 외국어 학습',
-  description: '영어, 스페인어, 포르투갈어 단어를 매일 학습하고 퀴즈로 확인하세요.',
+  description: '영어, 스페인어, 일본어 단어를 매일 학습하고 퀴즈로 확인하세요.',
   manifest: '/manifest.webmanifest',
-  icons: { apple: '/icon.svg' },
+  icons: { apple: '/apple-icon' },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
