@@ -9,56 +9,85 @@ interface WordCardProps {
   language: Language;
 }
 
+function SpeakButton({
+  onClick,
+  label,
+  size = 'md',
+}: {
+  onClick: () => void;
+  label: string;
+  size?: 'sm' | 'md';
+}) {
+  const cls =
+    size === 'md'
+      ? 'w-11 h-11 text-base bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-600'
+      : 'w-9 h-9 text-sm bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-600 dark:text-gray-400';
+
+  return (
+    <button
+      onClick={onClick}
+      className={`flex-shrink-0 flex items-center justify-center rounded-full transition-all active:scale-90 ${cls}`}
+      aria-label={label}
+    >
+      🔊
+    </button>
+  );
+}
+
 export default function WordCard({ word, language }: WordCardProps) {
   const langCode = TTS_LANG_CODES[language];
   const ttsSupported = isTTSSupported();
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-5 hover:shadow-md transition-shadow">
+      {/* Word + meaning row */}
       <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{word.word}</span>
-            <span className="text-xs text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap mb-1">
+            <span className="text-2xl font-bold text-gray-900 dark:text-gray-100 break-all">
+              {word.word}
+            </span>
+            <span className="text-xs text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full shrink-0">
               {word.partOfSpeech}
             </span>
           </div>
-          <p className="text-indigo-600 dark:text-indigo-400 font-semibold mt-1">{word.meaningKo}</p>
+          {word.phonetic && (
+            <p className="text-sm text-gray-400 dark:text-gray-500 mb-0.5">{word.phonetic}</p>
+          )}
+          <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{word.meaningKo}</p>
         </div>
         {ttsSupported && (
-          <button
+          <SpeakButton
             onClick={() => speakText(word.word, langCode)}
-            className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-600 transition-colors"
-            aria-label={`${word.word} 발음 듣기`}
-          >
-            🔊
-          </button>
+            label={`${word.word} 발음 듣기`}
+            size="md"
+          />
         )}
       </div>
 
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{word.explanationKo}</p>
+      {/* Explanation */}
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">
+        {word.explanationKo}
+      </p>
 
-      <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-3">
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex-1">
-            <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic">"{word.example}"</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{word.exampleKo}</p>
+      {/* Example sentence */}
+      <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-3.5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic leading-relaxed">
+              &ldquo;{word.example}&rdquo;
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">{word.exampleKo}</p>
           </div>
           {ttsSupported && (
-            <button
+            <SpeakButton
               onClick={() => speakText(word.example, langCode)}
-              className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-600 dark:text-gray-400 transition-colors text-xs"
-              aria-label="예문 발음 듣기"
-            >
-              🔊
-            </button>
+              label="예문 발음 듣기"
+              size="sm"
+            />
           )}
         </div>
       </div>
-
-      {!ttsSupported && (
-        <p className="text-xs text-gray-400 dark:text-gray-600 mt-2">이 브라우저는 발음 기능을 지원하지 않습니다.</p>
-      )}
     </div>
   );
 }

@@ -15,20 +15,18 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
   const router = useRouter();
   const [words, setWords] = useState<Word[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
-  const [date, setDate] = useState(getTodayDate);
+  const [date] = useState(getTodayDate);
 
   useEffect(() => {
     if (!VALID_LANGS.includes(lang as Language)) {
       router.replace('/');
       return;
     }
-    const today = getTodayDate();
-    setDate(today);
-    const todayWords = getTodayWords(lang as Language, today);
+    const todayWords = getTodayWords(lang as Language, date);
     setWords(todayWords);
-    const quizResult = getQuizResult(lang as Language, today);
+    const quizResult = getQuizResult(lang as Language, date);
     setResult(quizResult);
-  }, [lang, router]);
+  }, [lang, router, date]);
 
   if (!VALID_LANGS.includes(lang as Language)) return null;
   const language = lang as Language;
@@ -37,54 +35,79 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
   const totalQuestions = 10;
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 pb-28">
+      {/* Header */}
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.push('/')}
-          className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400 transition-colors"
           aria-label="홈으로"
         >
-          ← 뒤로
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
           <span className="text-2xl">{LANG_FLAGS[language]}</span>
-          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
-            {LANG_NAMES[language]} 오늘의 단어
+          <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 truncate">
+            {LANG_NAMES[language]}
           </h1>
+          <span className="text-sm text-gray-400 dark:text-gray-500 hidden sm:block">오늘의 단어</span>
         </div>
+        {words.length > 0 && (
+          <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2.5 py-1 rounded-full shrink-0">
+            {words.length}개
+          </span>
+        )}
       </div>
 
+      {/* Progress */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-4">
         <ProgressBar
           current={correctCount}
           total={totalQuestions}
-          label={result ? `오늘 학습 진행률 (${date})` : `오늘의 단어 (${date})`}
+          label={result ? '오늘 퀴즈 점수' : date}
         />
         {result && (
           <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
-            최근 시험 점수: {result.scorePercent}점 ({result.correctCount}/{totalQuestions})
+            {result.scorePercent}점 달성 · {result.correctCount}/{totalQuestions} 정답
           </p>
         )}
       </div>
 
+      {/* Word list */}
       <div className="flex flex-col gap-4">
-        {words.map((word) => (
-          <WordCard key={word.id} word={word} language={language} />
-        ))}
+        {words.length > 0
+          ? words.map((word) => <WordCard key={word.id} word={word} language={language} />)
+          : Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-5 animate-pulse"
+              >
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex-1">
+                    <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded-lg w-28 mb-2" />
+                    <div className="h-4 bg-gray-100 dark:bg-gray-700/60 rounded w-16" />
+                  </div>
+                  <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700/60 rounded-full" />
+                </div>
+                <div className="h-3.5 bg-gray-100 dark:bg-gray-700/60 rounded w-full mb-3" />
+                <div className="h-3.5 bg-gray-100 dark:bg-gray-700/60 rounded w-4/5" />
+              </div>
+            ))}
       </div>
 
-      {words.length === 0 && (
-        <p className="text-center text-gray-400 dark:text-gray-500 py-8">단어를 불러오는 중...</p>
-      )}
-
-      <div className="sticky bottom-4">
-        <button
-          onClick={() => router.push(`/${lang}/quiz`)}
-          disabled={words.length === 0}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg transition-colors disabled:opacity-50"
-        >
-          {result ? '다시 시험 보기 →' : '시험 보기 →'}
-        </button>
+      {/* Fixed bottom CTA */}
+      <div className="fixed bottom-0 left-0 right-0 px-4 pb-4 pt-3 bg-gradient-to-t from-gray-50 dark:from-gray-900 via-gray-50/90 dark:via-gray-900/90 to-transparent">
+        <div className="max-w-2xl mx-auto">
+          <button
+            onClick={() => router.push(`/${lang}/quiz`)}
+            disabled={words.length === 0}
+            className="w-full bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {result ? '다시 시험 보기 →' : '시험 보기 →'}
+          </button>
+        </div>
       </div>
     </div>
   );

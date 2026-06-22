@@ -3,9 +3,6 @@ import type { Language } from '@/lib/types';
 export const VALID_LANGS: Language[] = ['en', 'es', 'pt'];
 
 export function getTodayDate(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  // KST 고정 — 서버 UTC vs 브라우저 로컬 타임존 하이드레이션 불일치 방지
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
 }

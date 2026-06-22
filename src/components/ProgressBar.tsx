@@ -17,7 +17,14 @@ export default function ProgressBar({ current, total, label }: ProgressBarProps)
           </span>
         </div>
       )}
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+      <div
+        className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"
+        role="progressbar"
+        aria-valuenow={current}
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-label={label ?? `${current}/${total}`}
+      >
         <div
           className="bg-indigo-500 h-2.5 rounded-full transition-all duration-500"
           style={{ width: `${percent}%` }}

@@ -8,12 +8,18 @@ import { getQuizResult } from '@/lib/storage';
 import { getTodayWords } from '@/lib/words';
 import { getTodayDate, VALID_LANGS } from '@/lib/utils';
 
-function getScoreEmoji(percent: number): string {
-  if (percent === 100) return '🏆';
-  if (percent >= 80) return '🌟';
-  if (percent >= 60) return '👍';
-  if (percent >= 40) return '📖';
-  return '💪';
+interface ScoreInfo {
+  emoji: string;
+  message: string;
+  color: string;
+}
+
+function getScoreInfo(percent: number): ScoreInfo {
+  if (percent === 100) return { emoji: '🏆', message: '완벽합니다! 오늘의 챔피언!', color: 'text-yellow-500' };
+  if (percent >= 80) return { emoji: '🌟', message: '훌륭합니다! 거의 다 외웠어요!', color: 'text-indigo-500 dark:text-indigo-400' };
+  if (percent >= 60) return { emoji: '👍', message: '잘 했어요! 조금 더 연습해봐요', color: 'text-green-500 dark:text-green-400' };
+  if (percent >= 40) return { emoji: '📖', message: '천천히 복습하면 실력이 늘어요', color: 'text-orange-500 dark:text-orange-400' };
+  return { emoji: '💪', message: '포기하지 마세요! 반복이 실력입니다', color: 'text-red-500 dark:text-red-400' };
 }
 
 export default function ResultPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -44,63 +50,86 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
   if (!result) return null;
 
   const language = lang as Language;
-  const emoji = getScoreEmoji(result.scorePercent);
+  const { emoji, message, color } = getScoreInfo(result.scorePercent);
+  const totalCount = result.correctCount + result.wrongWordIds.length;
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">{LANG_FLAGS[language]}</span>
-          <span className="font-bold text-gray-900 dark:text-gray-100">{LANG_NAMES[language]} 퀴즈 결과</span>
-        </div>
+      {/* Header */}
+      <div className="flex items-center gap-2">
+        <span className="text-xl">{LANG_FLAGS[language]}</span>
+        <span className="font-bold text-gray-900 dark:text-gray-100">{LANG_NAMES[language]} 퀴즈 결과</span>
       </div>
 
+      {/* Score card */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-8 shadow-sm text-center">
-        <div className="text-6xl mb-3">{emoji}</div>
-        <div className="text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">
+        <div className="text-6xl mb-4">{emoji}</div>
+        <div className={`text-5xl font-bold mb-1 ${color}`}>
           {result.scorePercent}점
         </div>
-        <p className="text-gray-500 dark:text-gray-400 text-sm">
-          {result.correctCount}개 정답 / {result.correctCount + result.wrongWordIds.length}문제
+        <p className="text-gray-500 dark:text-gray-400 text-sm mb-1">
+          {result.correctCount}개 정답 / {totalCount}문제
         </p>
+        <p className={`text-sm font-medium mb-5 ${color}`}>{message}</p>
 
-        <div className="mt-4 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+        {/* Progress bar */}
+        <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
           <div
-            className="bg-indigo-500 h-3 rounded-full transition-all duration-700"
-            style={{ width: `${result.scorePercent}%` }}
+            className="h-3 rounded-full transition-all duration-700"
+            style={{
+              width: `${result.scorePercent}%`,
+              backgroundColor: result.scorePercent === 100
+                ? '#eab308'
+                : result.scorePercent >= 60
+                  ? '#6366f1'
+                  : '#f97316',
+            }}
           />
         </div>
       </div>
 
+      {/* Wrong words */}
       {wrongWords.length > 0 && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-5 shadow-sm">
-          <h2 className="font-bold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
-            <span>❌</span> 틀린 단어 ({wrongWords.length}개)
+          <h2 className="font-bold text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
+            <span>❌</span>
+            <span>틀린 단어</span>
+            <span className="text-xs font-normal text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full">
+              {wrongWords.length}개
+            </span>
           </h2>
           <div className="flex flex-col gap-2">
             {wrongWords.map((word) => (
               <div
                 key={word.id}
-                className="flex items-center justify-between bg-red-50 dark:bg-red-900/20 rounded-xl px-4 py-3"
+                className="bg-red-50 dark:bg-red-900/20 rounded-xl px-4 py-3"
               >
-                <span className="font-semibold text-gray-800 dark:text-gray-200">{word.word}</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{word.meaningKo}</span>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">{word.word}</span>
+                  <span className="text-sm font-medium text-red-600 dark:text-red-400">{word.meaningKo}</span>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-500 mt-1 truncate">
+                  {word.explanationKo}
+                </p>
               </div>
             ))}
           </div>
         </div>
       )}
 
+      {/* Perfect score */}
       {wrongWords.length === 0 && (
-        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-5 text-center">
-          <p className="text-green-700 dark:text-green-400 font-semibold">🎉 완벽! 모든 문제를 맞혔습니다!</p>
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-2xl p-5 text-center">
+          <p className="text-yellow-700 dark:text-yellow-400 font-bold text-lg">🎉 완벽한 점수!</p>
+          <p className="text-yellow-600 dark:text-yellow-500 text-sm mt-1">모든 단어를 완벽하게 외웠습니다</p>
         </div>
       )}
 
+      {/* Actions */}
       <div className="flex flex-col gap-3">
         <button
           onClick={() => router.push(`/${lang}/quiz`)}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow transition-colors"
+          className="w-full bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-md transition-all"
         >
           다시 시험 보기
         </button>
@@ -108,7 +137,7 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
           onClick={() => router.push(`/${lang}`)}
           className="w-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold py-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 transition-colors"
         >
-          오늘의 단어 보기
+          오늘의 단어 복습
         </button>
         <button
           onClick={() => router.push('/')}

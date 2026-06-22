@@ -56,12 +56,18 @@ describe('generateQuiz', () => {
     });
   });
 
-  it('generates different question order on repeated calls (randomness)', () => {
+  it('is deterministic for same inputs', () => {
     const quiz2 = generateQuiz(todayWords, allWords['en']);
     const ids1 = quiz.map((q) => q.id).join(',');
     const ids2 = quiz2.map((q) => q.id).join(',');
-    // This can occasionally be equal by chance, but with 10! possibilities it's effectively never
-    // Run quiz2 generation multiple times if this is flaky in practice
+    expect(ids1).toBe(ids2);
+  });
+
+  it('generates different order for different days', () => {
+    const otherWords = getTodayWords('en', '2026-06-23');
+    const quiz2 = generateQuiz(otherWords, allWords['en']);
+    const ids1 = quiz.map((q) => q.id).join(',');
+    const ids2 = quiz2.map((q) => q.id).join(',');
     expect(ids1).not.toBe(ids2);
   });
 });

@@ -1,6 +1,6 @@
 import type { Word, QuizQuestion, QuizType } from '@/lib/types';
 import { LANG_NAMES } from '@/lib/types';
-import { shuffleArray } from '@/lib/words';
+import { shuffleArray, hashString } from '@/lib/words';
 
 function buildMeaningChoiceQuestion(
   word: Word,
@@ -85,12 +85,27 @@ function buildFillBlankQuestion(
   const regex = new RegExp(escaped, 'i');
   const questionText = word.example.replace(regex, '___');
 
-  const distractors = shuffleArray(
+  // If the word wasn't found in the example, fall back to meaning-choice
+  if (questionText === word.example) {
+    return buildMeaningChoiceQuestion(word, allWords, index);
+  }
+
+  const others = shuffleArray(
     allWords.filter((w) => w.id !== word.id),
     index * 53 + 13
-  )
-    .slice(0, 3)
-    .map((w) => w.word);
+  );
+
+  // Dedup distractors like other builders
+  const distractors: string[] = [];
+  for (const w of others) {
+    if (distractors.length >= 3) break;
+    if (w.word !== word.word && !distractors.includes(w.word)) {
+      distractors.push(w.word);
+    }
+  }
+  while (distractors.length < 3) {
+    distractors.push(`option${distractors.length + 2}`);
+  }
 
   const options = shuffleArray(
     [word.word, ...distractors],
@@ -107,15 +122,6 @@ function buildFillBlankQuestion(
   };
 }
 
-function getRandomSeed(): number {
-  if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
-    const arr = new Uint32Array(1);
-    crypto.getRandomValues(arr);
-    return arr[0];
-  }
-  return Math.floor(Math.random() * 2 ** 32);
-}
-
 export function generateQuiz(todayWords: Word[], allWords: Word[]): QuizQuestion[] {
   const typeDistribution: QuizType[] = [
     'meaning-choice',
@@ -130,7 +136,8 @@ export function generateQuiz(todayWords: Word[], allWords: Word[]): QuizQuestion
     'fill-blank',
   ];
 
-  const seed = getRandomSeed();
+  // Deterministic seed from today's word set — same day/language = same quiz
+  const seed = todayWords.reduce((acc, w, i) => (acc ^ hashString(w.id + i)) >>> 0, 0);
   const shuffledTypes = shuffleArray(typeDistribution, seed % 99991);
   const shuffledWords = shuffleArray([...todayWords], (seed >> 8) % 88801);
 

@@ -4,6 +4,7 @@ export interface Word {
   id: string;
   language: Language;
   word: string;
+  phonetic?: string;
   meaningKo: string;
   partOfSpeech: string;
   explanationKo: string;
