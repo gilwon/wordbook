@@ -24,7 +24,7 @@ export default function StudyPage({ params }: { params: Promise<{ lang: string }
   const router = useRouter();
   const [words, setWords] = useState<Word[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(getTodayDate);
 
   useEffect(() => {
     if (!VALID_LANGS.includes(lang as Language)) {
