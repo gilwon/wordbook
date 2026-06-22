@@ -38,7 +38,7 @@ export default function QuizQuestionCard({
 
           return (
             <button
-              key={idx}
+              key={option}
               className={buttonClass}
               onClick={() => !answered && onAnswer(option)}
               disabled={!!answered}
