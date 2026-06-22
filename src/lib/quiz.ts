@@ -107,6 +107,15 @@ function buildFillBlankQuestion(
   };
 }
 
+function getRandomSeed(): number {
+  if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
+    const arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return arr[0];
+  }
+  return Math.floor(Math.random() * 2 ** 32);
+}
+
 export function generateQuiz(todayWords: Word[], allWords: Word[]): QuizQuestion[] {
   const typeDistribution: QuizType[] = [
     'meaning-choice',
@@ -121,8 +130,9 @@ export function generateQuiz(todayWords: Word[], allWords: Word[]): QuizQuestion
     'fill-blank',
   ];
 
-  const shuffledTypes = shuffleArray(typeDistribution, Date.now() % 99991);
-  const shuffledWords = shuffleArray([...todayWords], Date.now() % 88801);
+  const seed = getRandomSeed();
+  const shuffledTypes = shuffleArray(typeDistribution, seed % 99991);
+  const shuffledWords = shuffleArray([...todayWords], (seed >> 8) % 88801);
 
   const questions: QuizQuestion[] = shuffledWords.map((word, i) => {
     const type = shuffledTypes[i];
@@ -136,5 +146,5 @@ export function generateQuiz(todayWords: Word[], allWords: Word[]): QuizQuestion
     }
   });
 
-  return shuffleArray(questions, Date.now() % 77711);
+  return shuffleArray(questions, (seed >> 16) % 77711);
 }

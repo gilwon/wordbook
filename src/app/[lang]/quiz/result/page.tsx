@@ -6,16 +6,7 @@ import type { Language, QuizResult, Word } from '@/lib/types';
 import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
 import { getQuizResult } from '@/lib/storage';
 import { getTodayWords } from '@/lib/words';
-
-const VALID_LANGS: Language[] = ['en', 'es', 'pt'];
-
-function getTodayDate(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
+import { getTodayDate, VALID_LANGS } from '@/lib/utils';
 
 function getScoreEmoji(percent: number): string {
   if (percent === 100) return '🏆';
@@ -70,7 +61,7 @@ export default function ResultPage({ params }: { params: Promise<{ lang: string 
           {result.scorePercent}점
         </div>
         <p className="text-gray-500 text-sm">
-          {result.correctCount}개 정답 / {10}문제
+          {result.correctCount}개 정답 / {result.correctCount + result.wrongWordIds.length}문제
         </p>
 
         <div className="mt-4 w-full bg-gray-200 rounded-full h-3">

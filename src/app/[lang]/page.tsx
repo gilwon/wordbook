@@ -6,18 +6,9 @@ import type { Language, Word, QuizResult } from '@/lib/types';
 import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
 import { getTodayWords } from '@/lib/words';
 import { getQuizResult } from '@/lib/storage';
+import { getTodayDate, VALID_LANGS } from '@/lib/utils';
 import WordCard from '@/components/WordCard';
 import ProgressBar from '@/components/ProgressBar';
-
-const VALID_LANGS: Language[] = ['en', 'es', 'pt'];
-
-function getTodayDate(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
 
 export default function StudyPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params);

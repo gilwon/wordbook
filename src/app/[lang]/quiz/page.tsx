@@ -7,19 +7,10 @@ import { LANG_NAMES, LANG_FLAGS } from '@/lib/types';
 import { getTodayWords } from '@/lib/words';
 import { generateQuiz } from '@/lib/quiz';
 import { saveQuizResult } from '@/lib/storage';
+import { getTodayDate, VALID_LANGS } from '@/lib/utils';
 import { allWords } from '@/data/index';
 import QuizQuestionCard from '@/components/QuizQuestion';
 import ProgressBar from '@/components/ProgressBar';
-
-const VALID_LANGS: Language[] = ['en', 'es', 'pt'];
-
-function getTodayDate(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
 
 export default function QuizPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params);
@@ -29,19 +20,17 @@ export default function QuizPage({ params }: { params: Promise<{ lang: string }>
   const [answered, setAnswered] = useState<string | null>(null);
   const [wrongWordIds, setWrongWordIds] = useState<string[]>([]);
   const correctCountRef = useRef(0);
-  const [date, setDate] = useState('');
+  const [date] = useState(getTodayDate);
 
   useEffect(() => {
     if (!VALID_LANGS.includes(lang as Language)) {
       router.replace('/');
       return;
     }
-    const today = getTodayDate();
-    setDate(today);
-    const todayWords = getTodayWords(lang as Language, today);
+    const todayWords = getTodayWords(lang as Language, date);
     const quiz = generateQuiz(todayWords, allWords[lang as Language]);
     setQuestions(quiz);
-  }, [lang, router]);
+  }, [lang, router, date]);
 
   const handleAnswer = useCallback(
     (answer: string) => {
