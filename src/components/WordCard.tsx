@@ -79,7 +79,10 @@ export default function WordCard({ word, language }: WordCardProps) {
             <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic leading-relaxed">
               &ldquo;{word.example}&rdquo;
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">{word.exampleKo}</p>
+            {word.examplePronunciationKo && (
+              <p className="text-xs text-indigo-400 dark:text-indigo-500 font-medium mt-1">{word.examplePronunciationKo}</p>
+            )}
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{word.exampleKo}</p>
           </div>
           {ttsSupported && (
             <SpeakButton

@@ -12,6 +12,7 @@ export interface Word {
   partOfSpeech: string;
   explanationKo: string;
   example: string;
+  examplePronunciationKo?: string;
   exampleKo: string;
   difficulty: Difficulty;
 }
