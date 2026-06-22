@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { Word, Language } from '@/lib/types';
 import { TTS_LANG_CODES } from '@/lib/types';
 import { speakText, isTTSSupported } from '@/lib/tts';
@@ -29,6 +30,16 @@ function SpeakButton({ onClick, label, size = 'md' }: { onClick: () => void; lab
 export default function WordCard({ word, language }: WordCardProps) {
   const langCode = TTS_LANG_CODES[language];
   const ttsSupported = isTTSSupported();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const highlightCls = (i: number) =>
+    hoveredIndex === i
+      ? 'bg-yellow-200 dark:bg-yellow-400/30 rounded'
+      : '';
+
+  function handleTouchSegment(i: number) {
+    setHoveredIndex((prev) => (prev === i ? null : i));
+  }
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-5 hover:shadow-md transition-shadow">
@@ -76,14 +87,50 @@ export default function WordCard({ word, language }: WordCardProps) {
       <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-3.5">
         <div className="flex items-start gap-3">
           <div className="flex-1 min-w-0">
+            {/* Original example */}
             <p className="text-sm font-medium text-gray-800 dark:text-gray-200 italic leading-relaxed">
-              &ldquo;{word.example}&rdquo;
+              &ldquo;
+              {word.exampleSegments
+                ? word.exampleSegments.map((seg, i) => (
+                    <span
+                      key={i}
+                      className={`transition-colors ${highlightCls(i)}`}
+                      onMouseEnter={() => setHoveredIndex(i)}
+                      onMouseLeave={() => setHoveredIndex(null)}
+                      onTouchStart={() => handleTouchSegment(i)}
+                    >
+                      {seg.original}
+                    </span>
+                  ))
+                : word.example}
+              &rdquo;
             </p>
+
+            {/* Pronunciation */}
             {word.examplePronunciationKo && (
-              <p className="text-xs text-indigo-400 dark:text-indigo-500 font-medium mt-1">{word.examplePronunciationKo}</p>
+              <p className="text-xs text-indigo-400 dark:text-indigo-500 font-medium mt-1">
+                {word.examplePronunciationKo}
+              </p>
             )}
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{word.exampleKo}</p>
+
+            {/* Korean translation */}
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">
+              {word.exampleSegments
+                ? word.exampleSegments.map((seg, i) => (
+                    <span
+                      key={i}
+                      className={`transition-colors cursor-pointer ${highlightCls(i)}`}
+                      onMouseEnter={() => setHoveredIndex(i)}
+                      onMouseLeave={() => setHoveredIndex(null)}
+                      onTouchStart={() => handleTouchSegment(i)}
+                    >
+                      {seg.ko}
+                    </span>
+                  ))
+                : word.exampleKo}
+            </p>
           </div>
+
           {ttsSupported && (
             <SpeakButton
               onClick={() => speakText(word.example, langCode)}

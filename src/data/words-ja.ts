@@ -14,6 +14,10 @@ export const wordsJa: Word[] = [
     example: "日常の小さな幸せを大切にしたい。",
     examplePronunciationKo: "니치죠노 치이사나 시아와세오 타이세츠니 시타이.",
     exampleKo: "일상의 작은 행복을 소중히 여기고 싶다.",
+    exampleSegments: [
+      { original: "日常の小さな幸せを", ko: "일상의 작은 행복을 " },
+      { original: "大切にしたい。", ko: "소중히 여기고 싶다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -28,6 +32,10 @@ export const wordsJa: Word[] = [
     example: "彼女の笑顔で元気をもらった。",
     examplePronunciationKo: "카노죠노 에가오데 겐키오 모랏타.",
     exampleKo: "그녀의 미소에서 힘을 얻었다.",
+    exampleSegments: [
+      { original: "彼女の笑顔で", ko: "그녀의 미소에서 " },
+      { original: "元気をもらった。", ko: "힘을 얻었다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -42,6 +50,11 @@ export const wordsJa: Word[] = [
     example: "朝、隣人に挨拶をした。",
     examplePronunciationKo: "아사, 린진니 아이사츠오 시타.",
     exampleKo: "아침에 이웃에게 인사를 했다.",
+    exampleSegments: [
+      { original: "朝、", ko: "아침에 " },
+      { original: "隣人に", ko: "이웃에게 " },
+      { original: "挨拶をした。", ko: "인사를 했다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -56,6 +69,11 @@ export const wordsJa: Word[] = [
     example: "試験に向けて集中して勉強した。",
     examplePronunciationKo: "시켄니 무케테 슈추시테 벤쿄시타.",
     exampleKo: "시험을 위해 집중해서 공부했다.",
+    exampleSegments: [
+      { original: "試験に向けて", ko: "시험을 위해 " },
+      { original: "集中して", ko: "집중해서 " },
+      { original: "勉強した。", ko: "공부했다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -70,6 +88,11 @@ export const wordsJa: Word[] = [
     example: "毎日ピアノの練習をしている。",
     examplePronunciationKo: "마이니치 피아노노 렌슈오 시테이루.",
     exampleKo: "매일 피아노 연습을 하고 있다.",
+    exampleSegments: [
+      { original: "毎日", ko: "매일 " },
+      { original: "ピアノの練習を", ko: "피아노 연습을 " },
+      { original: "している。", ko: "하고 있다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -84,6 +107,11 @@ export const wordsJa: Word[] = [
     example: "来月、家族と旅行に行く予定だ。",
     examplePronunciationKo: "라이게츠, 카조쿠토 료코니 이쿠 요테이다.",
     exampleKo: "다음 달 가족과 여행 갈 예정이다.",
+    exampleSegments: [
+      { original: "来月、", ko: "다음 달 " },
+      { original: "家族と旅行に", ko: "가족과 여행 " },
+      { original: "行く予定だ。", ko: "갈 예정이다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -98,6 +126,11 @@ export const wordsJa: Word[] = [
     example: "相手の気持ちを考えることが大切だ。",
     examplePronunciationKo: "아이테노 기모치오 캉가에루 코토가 타이세츠다.",
     exampleKo: "상대방의 마음을 생각하는 것이 중요하다.",
+    exampleSegments: [
+      { original: "相手の気持ちを", ko: "상대방의 마음을 " },
+      { original: "考えることが", ko: "생각하는 것이 " },
+      { original: "大切だ。", ko: "중요하다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -112,6 +145,11 @@ export const wordsJa: Word[] = [
     example: "時間はとても大切なものだ。",
     examplePronunciationKo: "지칸와 토테모 타이세츠나 모노다.",
     exampleKo: "시간은 매우 소중한 것이다.",
+    exampleSegments: [
+      { original: "時間は", ko: "시간은 " },
+      { original: "とても大切な", ko: "매우 소중한 " },
+      { original: "ものだ。", ko: "것이다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -126,6 +164,11 @@ export const wordsJa: Word[] = [
     example: "毎朝運動して元気に過ごしている。",
     examplePronunciationKo: "마이아사 운도시테 겐키니 스고시테이루.",
     exampleKo: "매일 아침 운동해서 활기차게 지내고 있다.",
+    exampleSegments: [
+      { original: "毎朝運動して", ko: "매일 아침 운동해서 " },
+      { original: "元気に", ko: "활기차게 " },
+      { original: "過ごしている。", ko: "지내고 있다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -140,6 +183,11 @@ export const wordsJa: Word[] = [
     example: "静かな朝に本を読むのが好きだ。",
     examplePronunciationKo: "시즈카나 아사니 혼오 요무노가 스키다.",
     exampleKo: "조용한 아침에 책을 읽는 것을 좋아한다.",
+    exampleSegments: [
+      { original: "静かな朝に", ko: "조용한 아침에 " },
+      { original: "本を読むのが", ko: "책을 읽는 것을 " },
+      { original: "好きだ。", ko: "좋아한다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -154,6 +202,11 @@ export const wordsJa: Word[] = [
     example: "友達と話すと楽しい気分になる。",
     examplePronunciationKo: "토모다치토 하나스토 타노시이 기분니 나루.",
     exampleKo: "친구와 이야기하면 즐거운 기분이 된다.",
+    exampleSegments: [
+      { original: "友達と話すと", ko: "친구와 이야기하면 " },
+      { original: "楽しい気分に", ko: "즐거운 기분이 " },
+      { original: "なる。", ko: "된다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -168,6 +221,11 @@ export const wordsJa: Word[] = [
     example: "正直に話してくれてありがとう。",
     examplePronunciationKo: "쇼지키니 하나시테 쿠레테 아리가토.",
     exampleKo: "솔직하게 말해줘서 고마워.",
+    exampleSegments: [
+      { original: "正直に", ko: "솔직하게 " },
+      { original: "話してくれて", ko: "말해줘서 " },
+      { original: "ありがとう。", ko: "고마워." },
+    ],
     difficulty: "기초",
   },
   {
@@ -182,6 +240,10 @@ export const wordsJa: Word[] = [
     example: "季節が変わると気分も変わる。",
     examplePronunciationKo: "키세츠가 카와루토 기분모 카와루.",
     exampleKo: "계절이 바뀌면 기분도 바뀐다.",
+    exampleSegments: [
+      { original: "季節が変わると", ko: "계절이 바뀌면 " },
+      { original: "気分も変わる。", ko: "기분도 바뀐다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -196,6 +258,11 @@ export const wordsJa: Word[] = [
     example: "毎日日記を続けることにした。",
     examplePronunciationKo: "마이니치 닛키오 츠즈케루 코토니 시타.",
     exampleKo: "매일 일기를 계속 쓰기로 했다.",
+    exampleSegments: [
+      { original: "毎日日記を", ko: "매일 일기를 " },
+      { original: "続けることに", ko: "계속 쓰기로 " },
+      { original: "した。", ko: "했다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -210,6 +277,11 @@ export const wordsJa: Word[] = [
     example: "春になると新しい生活が始まる。",
     examplePronunciationKo: "하루니 나루토 아타라시이 세이카츠가 하지마루.",
     exampleKo: "봄이 되면 새로운 생활이 시작된다.",
+    exampleSegments: [
+      { original: "春になると", ko: "봄이 되면 " },
+      { original: "新しい生活が", ko: "새로운 생활이 " },
+      { original: "始まる。", ko: "시작된다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -224,6 +296,11 @@ export const wordsJa: Word[] = [
     example: "困ったとき、友達に助けてもらった。",
     examplePronunciationKo: "코맛타 토키, 토모다치니 타스케테 모랏타.",
     exampleKo: "어려울 때 친구에게 도움을 받았다.",
+    exampleSegments: [
+      { original: "困ったとき、", ko: "어려울 때 " },
+      { original: "友達に", ko: "친구에게 " },
+      { original: "助けてもらった。", ko: "도움을 받았다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -238,6 +315,11 @@ export const wordsJa: Word[] = [
     example: "最近は仕事で忙しい日々が続く。",
     examplePronunciationKo: "사이킨와 시고토데 이소가시이 히비가 츠즈쿠.",
     exampleKo: "최근 일로 바쁜 날들이 계속된다.",
+    exampleSegments: [
+      { original: "最近は仕事で", ko: "최근 일로 " },
+      { original: "忙しい日々が", ko: "바쁜 날들이 " },
+      { original: "続く。", ko: "계속된다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -252,6 +334,11 @@ export const wordsJa: Word[] = [
     example: "毎晩一時間は勉強する習慣がある。",
     examplePronunciationKo: "마이반 이치지칸와 벤쿄스루 슈칸가 아루.",
     exampleKo: "매일 저녁 한 시간은 공부하는 습관이 있다.",
+    exampleSegments: [
+      { original: "毎晩一時間は", ko: "매일 저녁 한 시간은 " },
+      { original: "勉強する習慣が", ko: "공부하는 습관이 " },
+      { original: "ある。", ko: "있다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -266,6 +353,11 @@ export const wordsJa: Word[] = [
     example: "良い習慣を身につけることが大切だ。",
     examplePronunciationKo: "요이 슈칸오 미니 츠케루 코토가 타이세츠다.",
     exampleKo: "좋은 습관을 익히는 것이 중요하다.",
+    exampleSegments: [
+      { original: "良い習慣を", ko: "좋은 습관을 " },
+      { original: "身につけることが", ko: "익히는 것이 " },
+      { original: "大切だ。", ko: "중요하다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -280,6 +372,11 @@ export const wordsJa: Word[] = [
     example: "毎日、小さなことにも感謝するようにしている。",
     examplePronunciationKo: "마이니치, 치이사나 코토니모 칸샤스루 요니 시테이루.",
     exampleKo: "매일 작은 것에도 감사하려고 노력한다.",
+    exampleSegments: [
+      { original: "毎日、小さなことにも", ko: "매일 작은 것에도 " },
+      { original: "感謝するように", ko: "감사하려고 " },
+      { original: "している。", ko: "노력한다." },
+    ],
     difficulty: "기초",
   },
   // 중급 (ja-021 ~ ja-040): JLPT N3
@@ -295,6 +392,11 @@ export const wordsJa: Word[] = [
     example: "継続的な努力が成功への道を開く。",
     examplePronunciationKo: "케이조쿠테키나 도료쿠가 세이코에노 미치오 히라쿠.",
     exampleKo: "지속적인 노력이 성공의 길을 열어준다.",
+    exampleSegments: [
+      { original: "継続的な努力が", ko: "지속적인 노력이 " },
+      { original: "成功への道を", ko: "성공의 길을 " },
+      { original: "開く。", ko: "열어준다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -309,6 +411,11 @@ export const wordsJa: Word[] = [
     example: "我慢することで、より大きな喜びが待っている。",
     examplePronunciationKo: "가만 스루 코토데, 요리 오키나 요로코비가 맛테이루.",
     exampleKo: "인내함으로써 더 큰 기쁨이 기다리고 있다.",
+    exampleSegments: [
+      { original: "我慢することで、", ko: "인내함으로써 " },
+      { original: "より大きな喜びが", ko: "더 큰 기쁨이 " },
+      { original: "待っている。", ko: "기다리고 있다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -323,6 +430,11 @@ export const wordsJa: Word[] = [
     example: "その店は落ち着いた雰囲気で居心地が良い。",
     examplePronunciationKo: "소노 미세와 오치츠이타 훈이키데 이고코치가 요이.",
     exampleKo: "그 가게는 차분한 분위기로 편안하다.",
+    exampleSegments: [
+      { original: "その店は", ko: "그 가게는 " },
+      { original: "落ち着いた雰囲気で", ko: "차분한 분위기로 " },
+      { original: "居心地が良い。", ko: "편안하다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -337,6 +449,10 @@ export const wordsJa: Word[] = [
     example: "成功体験が自信につながる。",
     examplePronunciationKo: "세이코 타이켄가 지신니 츠나가루.",
     exampleKo: "성공 경험이 자신감으로 이어진다.",
+    exampleSegments: [
+      { original: "成功体験が", ko: "성공 경험이 " },
+      { original: "自信につながる。", ko: "자신감으로 이어진다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -351,6 +467,10 @@ export const wordsJa: Word[] = [
     example: "どんなに辛くても、夢を諦めたくない。",
     examplePronunciationKo: "돈나니 츠라쿠테모, 유메오 아키라메타쿠나이.",
     exampleKo: "아무리 힘들어도 꿈을 포기하고 싶지 않다.",
+    exampleSegments: [
+      { original: "どんなに辛くても、", ko: "아무리 힘들어도 " },
+      { original: "夢を諦めたくない。", ko: "꿈을 포기하고 싶지 않다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -365,6 +485,11 @@ export const wordsJa: Word[] = [
     example: "誠実な態度が人の信頼を勝ち取る。",
     examplePronunciationKo: "세이지츠나 타이도가 히토노 신라이오 카치토루.",
     exampleKo: "성실한 태도가 사람의 신뢰를 얻어낸다.",
+    exampleSegments: [
+      { original: "誠実な態度が", ko: "성실한 태도가 " },
+      { original: "人の信頼を", ko: "사람의 신뢰를 " },
+      { original: "勝ち取る。", ko: "얻어낸다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -379,6 +504,11 @@ export const wordsJa: Word[] = [
     example: "穏やかな性格の人は周りを安心させる。",
     examplePronunciationKo: "오다야카나 세이카쿠노 히토와 마와리오 안신사세루.",
     exampleKo: "온화한 성격의 사람은 주변을 편안하게 한다.",
+    exampleSegments: [
+      { original: "穏やかな性格の人は", ko: "온화한 성격의 사람은 " },
+      { original: "周りを", ko: "주변을 " },
+      { original: "安心させる。", ko: "편안하게 한다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -393,6 +523,11 @@ export const wordsJa: Word[] = [
     example: "積極的に意見を発言することが大切だ。",
     examplePronunciationKo: "셋쿄쿠테키니 이켄오 하츠겐 스루 코토가 타이세츠다.",
     exampleKo: "적극적으로 의견을 발언하는 것이 중요하다.",
+    exampleSegments: [
+      { original: "積極的に意見を", ko: "적극적으로 의견을 " },
+      { original: "発言することが", ko: "발언하는 것이 " },
+      { original: "大切だ。", ko: "중요하다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -407,6 +542,11 @@ export const wordsJa: Word[] = [
     example: "日々の工夫が生活をより豊かにする。",
     examplePronunciationKo: "히비노 쿠후가 세이카츠오 요리 유타카니 스루.",
     exampleKo: "매일의 궁리가 생활을 더 풍요롭게 한다.",
+    exampleSegments: [
+      { original: "日々の工夫が", ko: "매일의 궁리가 " },
+      { original: "生活をより", ko: "생활을 더 " },
+      { original: "豊かにする。", ko: "풍요롭게 한다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -421,6 +561,10 @@ export const wordsJa: Word[] = [
     example: "新しい挑戦には覚悟が必要だ。",
     examplePronunciationKo: "아타라시이 쵸센니와 카쿠고가 히츠요다.",
     exampleKo: "새로운 도전에는 각오가 필요하다.",
+    exampleSegments: [
+      { original: "新しい挑戦には", ko: "새로운 도전에는 " },
+      { original: "覚悟が必要だ。", ko: "각오가 필요하다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -435,6 +579,11 @@ export const wordsJa: Word[] = [
     example: "心に余裕があると物事をうまく判断できる。",
     examplePronunciationKo: "코코로니 요유가 아루토 모노고토오 우마쿠 한단 데키루.",
     exampleKo: "마음에 여유가 있으면 일을 잘 판단할 수 있다.",
+    exampleSegments: [
+      { original: "心に余裕があると", ko: "마음에 여유가 있으면 " },
+      { original: "物事をうまく", ko: "일을 잘 " },
+      { original: "判断できる。", ko: "판단할 수 있다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -449,6 +598,11 @@ export const wordsJa: Word[] = [
     example: "失敗したら反省して次に活かす。",
     examplePronunciationKo: "싯파이 시타라 한세이시테 츠기니 이카스.",
     exampleKo: "실패하면 반성하고 다음에 활용한다.",
+    exampleSegments: [
+      { original: "失敗したら", ko: "실패하면 " },
+      { original: "反省して", ko: "반성하고 " },
+      { original: "次に活かす。", ko: "다음에 활용한다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -463,6 +617,11 @@ export const wordsJa: Word[] = [
     example: "相手への配慮が良い人間関係を作る。",
     examplePronunciationKo: "아이테에노 하이료가 요이 닌겐칸케이오 츠쿠루.",
     exampleKo: "상대방에 대한 배려가 좋은 인간관계를 만든다.",
+    exampleSegments: [
+      { original: "相手への配慮が", ko: "상대방에 대한 배려가 " },
+      { original: "良い人間関係を", ko: "좋은 인간관계를 " },
+      { original: "作る。", ko: "만든다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -477,6 +636,11 @@ export const wordsJa: Word[] = [
     example: "幼い頃から医者になることへの憧れがあった。",
     examplePronunciationKo: "오사나이 코로카라 이샤니 나루 코토에노 아코가레가 앗타.",
     exampleKo: "어릴 때부터 의사가 되는 것에 대한 동경이 있었다.",
+    exampleSegments: [
+      { original: "幼い頃から", ko: "어릴 때부터 " },
+      { original: "医者になることへの", ko: "의사가 되는 것에 대한 " },
+      { original: "憧れがあった。", ko: "동경이 있었다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -491,6 +655,10 @@ export const wordsJa: Word[] = [
     example: "素直に謝ることができる人は強い。",
     examplePronunciationKo: "스나오니 아야마루 코토가 데키루 히토와 츠요이.",
     exampleKo: "솔직하게 사과할 수 있는 사람은 강하다.",
+    exampleSegments: [
+      { original: "素直に謝ることができる", ko: "솔직하게 사과할 수 있는 " },
+      { original: "人は強い。", ko: "사람은 강하다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -505,6 +673,11 @@ export const wordsJa: Word[] = [
     example: "弱点を克服するには継続的な努力が必要だ。",
     examplePronunciationKo: "쟈쿠텐오 코쿠후쿠 스루니와 케이조쿠테키나 도료쿠가 히츠요다.",
     exampleKo: "약점을 극복하려면 지속적인 노력이 필요하다.",
+    exampleSegments: [
+      { original: "弱点を克服するには", ko: "약점을 극복하려면 " },
+      { original: "継続的な努力が", ko: "지속적인 노력이 " },
+      { original: "必要だ。", ko: "필요하다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -519,6 +692,11 @@ export const wordsJa: Word[] = [
     example: "過去への執着を手放すことが前進につながる。",
     examplePronunciationKo: "카코에노 슈차쿠오 테바나스 코토가 젠신니 츠나가루.",
     exampleKo: "과거에 대한 집착을 내려놓는 것이 전진으로 이어진다.",
+    exampleSegments: [
+      { original: "過去への執着を", ko: "과거에 대한 집착을 " },
+      { original: "手放すことが", ko: "내려놓는 것이 " },
+      { original: "前進につながる。", ko: "전진으로 이어진다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -533,6 +711,11 @@ export const wordsJa: Word[] = [
     example: "時には妥協することも大切な判断だ。",
     examplePronunciationKo: "토키니와 다쿄 스루 코토모 타이세츠나 한단다.",
     exampleKo: "때로는 타협하는 것도 중요한 판단이다.",
+    exampleSegments: [
+      { original: "時には", ko: "때로는 " },
+      { original: "妥協することも", ko: "타협하는 것도 " },
+      { original: "大切な判断だ。", ko: "중요한 판단이다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -547,6 +730,11 @@ export const wordsJa: Word[] = [
     example: "責任を持って行動することが信頼の基本だ。",
     examplePronunciationKo: "세키닌오 못테 코도 스루 코토가 신라이노 키혼다.",
     exampleKo: "책임감 있게 행동하는 것이 신뢰의 기본이다.",
+    exampleSegments: [
+      { original: "責任を持って", ko: "책임감 있게 " },
+      { original: "行動することが", ko: "행동하는 것이 " },
+      { original: "信頼の基本だ。", ko: "신뢰의 기본이다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -561,6 +749,11 @@ export const wordsJa: Word[] = [
     example: "逆境こそが人を強くする最良の教師だ。",
     examplePronunciationKo: "갓쿄코소가 히토오 츠요쿠 스루 사이료노 쿄시다.",
     exampleKo: "역경이야말로 사람을 강하게 만드는 최고의 스승이다.",
+    exampleSegments: [
+      { original: "逆境こそが", ko: "역경이야말로 " },
+      { original: "人を強くする", ko: "사람을 강하게 만드는 " },
+      { original: "最良の教師だ。", ko: "최고의 스승이다." },
+    ],
     difficulty: "중급",
   },
   // 고급 (ja-041 ~ ja-060): JLPT N2-N1
@@ -576,6 +769,10 @@ export const wordsJa: Word[] = [
     example: "桜の花びらのように、美しいものは儚い。",
     examplePronunciationKo: "사쿠라노 하나비라노 요니, 우츠쿠시이 모노와 하카나이.",
     exampleKo: "벚꽃 잎처럼 아름다운 것은 덧없다.",
+    exampleSegments: [
+      { original: "桜の花びらのように、", ko: "벚꽃 잎처럼 " },
+      { original: "美しいものは儚い。", ko: "아름다운 것은 덧없다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -590,6 +787,10 @@ export const wordsJa: Word[] = [
     example: "訃報を聞いた彼女は、思わず慟哭した。",
     examplePronunciationKo: "후호오 키이타 카노죠와, 오모와즈 도코쿠시타.",
     exampleKo: "부고를 들은 그녀는 자신도 모르게 통곡했다.",
+    exampleSegments: [
+      { original: "訃報を聞いた彼女は、", ko: "부고를 들은 그녀는 " },
+      { original: "思わず慟哭した。", ko: "자신도 모르게 통곡했다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -604,6 +805,11 @@ export const wordsJa: Word[] = [
     example: "旅先での邂逅が生涯の友情に発展した。",
     examplePronunciationKo: "타비사키데노 카이코가 쇼가이노 유죠니 핫텐시타.",
     exampleKo: "여행지에서의 우연한 만남이 평생의 우정으로 발전했다.",
+    exampleSegments: [
+      { original: "旅先での邂逅が", ko: "여행지에서의 우연한 만남이 " },
+      { original: "生涯の友情に", ko: "평생의 우정으로 " },
+      { original: "発展した。", ko: "발전했다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -618,6 +824,10 @@ export const wordsJa: Word[] = [
     example: "音楽の世界に陶酔するあまり、時間を忘れた。",
     examplePronunciationKo: "온가쿠노 세카이니 토스이 스루 아마리, 지칸오 와스레타.",
     exampleKo: "음악의 세계에 도취한 나머지 시간을 잊었다.",
+    exampleSegments: [
+      { original: "音楽の世界に陶酔するあまり、", ko: "음악의 세계에 도취한 나머지 " },
+      { original: "時間を忘れた。", ko: "시간을 잊었다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -632,6 +842,10 @@ export const wordsJa: Word[] = [
     example: "問題を俯瞰することで解決策が見えてきた。",
     examplePronunciationKo: "몬다이오 후칸 스루 코토데 카이케츠사쿠가 미에테키타.",
     exampleKo: "문제를 조망함으로써 해결책이 보이기 시작했다.",
+    exampleSegments: [
+      { original: "問題を俯瞰することで", ko: "문제를 조망함으로써 " },
+      { original: "解決策が見えてきた。", ko: "해결책이 보이기 시작했다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -646,6 +860,11 @@ export const wordsJa: Word[] = [
     example: "老齢になると自然と諦観が身につくものだ。",
     examplePronunciationKo: "로레이니 나루토 시젠토 테이칸가 미니 츠쿠 모노다.",
     exampleKo: "노년이 되면 자연스럽게 체념적 통찰이 몸에 배게 된다.",
+    exampleSegments: [
+      { original: "老齢になると", ko: "노년이 되면 " },
+      { original: "自然と諦観が", ko: "자연스럽게 체념적 통찰이 " },
+      { original: "身につくものだ。", ko: "몸에 배게 된다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -660,6 +879,11 @@ export const wordsJa: Word[] = [
     example: "日本社会では忖度が円滑な人間関係を生む。",
     examplePronunciationKo: "니혼 샤카이데와 손타쿠가 엔카츠나 닌겐칸케이오 우무.",
     exampleKo: "일본 사회에서는 눈치껏 헤아리는 것이 원활한 인간관계를 만든다.",
+    exampleSegments: [
+      { original: "日本社会では", ko: "일본 사회에서는 " },
+      { original: "忖度が円滑な", ko: "눈치껏 헤아리는 것이 원활한 " },
+      { original: "人間関係を生む。", ko: "인간관계를 만든다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -674,6 +898,10 @@ export const wordsJa: Word[] = [
     example: "長い逡巡の末、彼は決断を下した。",
     examplePronunciationKo: "나가이 슌준노 스에, 카레와 켓단오 쿠다시타.",
     exampleKo: "오랜 망설임 끝에 그는 결단을 내렸다.",
+    exampleSegments: [
+      { original: "長い逡巡の末、", ko: "오랜 망설임 끝에 " },
+      { original: "彼は決断を下した。", ko: "그는 결단을 내렸다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -688,6 +916,10 @@ export const wordsJa: Word[] = [
     example: "毎朝の瞑想で心が落ち着く。",
     examplePronunciationKo: "마이아사노 메이소데 코코로가 오치츠쿠.",
     exampleKo: "매일 아침 명상으로 마음이 차분해진다.",
+    exampleSegments: [
+      { original: "毎朝の瞑想で", ko: "매일 아침 명상으로 " },
+      { original: "心が落ち着く。", ko: "마음이 차분해진다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -702,6 +934,10 @@ export const wordsJa: Word[] = [
     example: "大自然の前に立つと、畏敬の念を覚える。",
     examplePronunciationKo: "다이시젠노 마에니 타츠토, 이케이노 넨오 오보에루.",
     exampleKo: "대자연 앞에 서면 외경심을 느낀다.",
+    exampleSegments: [
+      { original: "大自然の前に立つと、", ko: "대자연 앞에 서면 " },
+      { original: "畏敬の念を覚える。", ko: "외경심을 느낀다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -716,6 +952,11 @@ export const wordsJa: Word[] = [
     example: "年を取るほど、生活の滋味がわかるようになる。",
     examplePronunciationKo: "토시오 토루 호도, 세이카츠노 지미가 와카루 요니 나루.",
     exampleKo: "나이를 먹을수록 삶의 깊은 맛을 알게 된다.",
+    exampleSegments: [
+      { original: "年を取るほど、", ko: "나이를 먹을수록 " },
+      { original: "生活の滋味が", ko: "삶의 깊은 맛을 " },
+      { original: "わかるようになる。", ko: "알게 된다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -730,6 +971,10 @@ export const wordsJa: Word[] = [
     example: "蹉跌を経験することで、人は成長する。",
     examplePronunciationKo: "사테츠오 케이켄 스루 코토데, 히토와 세이초 스루.",
     exampleKo: "좌절을 경험함으로써 사람은 성장한다.",
+    exampleSegments: [
+      { original: "蹉跌を経験することで、", ko: "좌절을 경험함으로써 " },
+      { original: "人は成長する。", ko: "사람은 성장한다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -744,6 +989,10 @@ export const wordsJa: Word[] = [
     example: "選択の岐路に立ち、深い懊悩に陥った。",
     examplePronunciationKo: "센타쿠노 키로니 타치, 후카이 오노니 오치잇타.",
     exampleKo: "선택의 기로에 서서 깊은 번민에 빠졌다.",
+    exampleSegments: [
+      { original: "選択の岐路に立ち、", ko: "선택의 기로에 서서 " },
+      { original: "深い懊悩に陥った。", ko: "깊은 번민에 빠졌다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -758,6 +1007,11 @@ export const wordsJa: Word[] = [
     example: "休日は公園を逍遥して心を癒やす。",
     examplePronunciationKo: "큐지츠와 코엔오 쇼요시테 코코로오 이야스.",
     exampleKo: "휴일은 공원을 한가로이 거닐며 마음을 달랜다.",
+    exampleSegments: [
+      { original: "休日は公園を", ko: "휴일은 공원을 " },
+      { original: "逍遥して", ko: "한가로이 거닐며 " },
+      { original: "心を癒やす。", ko: "마음을 달랜다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -772,6 +1026,11 @@ export const wordsJa: Word[] = [
     example: "蒼然とした古都の街並みに息をのんだ。",
     examplePronunciationKo: "소젠토시타 코토노 마치나미니 이키오 논다.",
     exampleKo: "창연한 고도의 거리 풍경에 숨을 삼켰다.",
+    exampleSegments: [
+      { original: "蒼然とした古都の", ko: "창연한 고도의 " },
+      { original: "街並みに", ko: "거리 풍경에 " },
+      { original: "息をのんだ。", ko: "숨을 삼켰다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -786,6 +1045,10 @@ export const wordsJa: Word[] = [
     example: "相手の立場を慮って、言葉を選んだ。",
     examplePronunciationKo: "아이테노 타치바오 오몬팟테, 코토바오 에란다.",
     exampleKo: "상대방의 입장을 깊이 헤아려 말을 골랐다.",
+    exampleSegments: [
+      { original: "相手の立場を慮って、", ko: "상대방의 입장을 깊이 헤아려 " },
+      { original: "言葉を選んだ。", ko: "말을 골랐다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -800,6 +1063,11 @@ export const wordsJa: Word[] = [
     example: "美しい夕焼けはまさに刹那の輝きだった。",
     examplePronunciationKo: "우츠쿠시이 유야케와 마사니 세츠나노 카가야키닷타.",
     exampleKo: "아름다운 노을은 정말이지 찰나의 빛이었다.",
+    exampleSegments: [
+      { original: "美しい夕焼けは", ko: "아름다운 노을은 " },
+      { original: "まさに刹那の", ko: "정말이지 찰나의 " },
+      { original: "輝きだった。", ko: "빛이었다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -814,6 +1082,10 @@ export const wordsJa: Word[] = [
     example: "蒙昧を脱するには教育が不可欠だ。",
     examplePronunciationKo: "모마이오 다츠 스루니와 쿄이쿠가 후카케츠다.",
     exampleKo: "몽매함을 벗어나려면 교육이 불가결하다.",
+    exampleSegments: [
+      { original: "蒙昧を脱するには", ko: "몽매함을 벗어나려면 " },
+      { original: "教育が不可欠だ。", ko: "교육이 불가결하다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -828,6 +1100,11 @@ export const wordsJa: Word[] = [
     example: "困難な状況でも、彼女は凛然として立っていた。",
     examplePronunciationKo: "곤난나 죠쿄데모, 카노죠와 린젠토시테 탓테이타.",
     exampleKo: "어려운 상황에서도 그녀는 의연하게 서 있었다.",
+    exampleSegments: [
+      { original: "困難な状況でも、", ko: "어려운 상황에서도 " },
+      { original: "彼女は凛然として", ko: "그녀는 의연하게 " },
+      { original: "立っていた。", ko: "서 있었다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -842,6 +1119,11 @@ export const wordsJa: Word[] = [
     example: "能の舞台には、独特の幽玄の美がある。",
     examplePronunciationKo: "노노 부타이니와, 도쿠토쿠노 유겐노 비가 아루.",
     exampleKo: "노(能) 무대에는 독특한 유현의 아름다움이 있다.",
+    exampleSegments: [
+      { original: "能の舞台には、", ko: "노(能) 무대에는 " },
+      { original: "独特の幽玄の", ko: "독특한 유현의 " },
+      { original: "美がある。", ko: "아름다움이 있다." },
+    ],
     difficulty: "고급",
   },
 ];

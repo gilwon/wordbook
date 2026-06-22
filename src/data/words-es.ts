@@ -13,6 +13,10 @@ export const wordsEs: Word[] = [
     example: "La alegría de los niños es contagiosa.",
     examplePronunciationKo: "라 알레그리아 데 로스 니뇨스 에스 콘타히오사.",
     exampleKo: "아이들의 기쁨은 전염성이 있다.",
+    exampleSegments: [
+      { original: "La alegría de los niños ", ko: "아이들의 기쁨은 " },
+      { original: "es contagiosa.", ko: "전염성이 있다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -27,6 +31,10 @@ export const wordsEs: Word[] = [
     example: "Su bondad nos conmovió profundamente.",
     examplePronunciationKo: "수 본다드 노스 콘모비오 프로푼다멘테.",
     exampleKo: "그의 친절함이 우리를 깊이 감동시켰다.",
+    exampleSegments: [
+      { original: "Su bondad ", ko: "그의 친절함이 " },
+      { original: "nos conmovió profundamente.", ko: "우리를 깊이 감동시켰다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -41,6 +49,11 @@ export const wordsEs: Word[] = [
     example: "Me gusta caminar por el parque cada mañana.",
     examplePronunciationKo: "메 구스타 카미나르 포르 엘 파르케 카다 마냐나.",
     exampleKo: "나는 매일 아침 공원을 걷는 것을 좋아한다.",
+    exampleSegments: [
+      { original: "Me gusta caminar ", ko: "나는 걷는 것을 좋아한다 " },
+      { original: "por el parque ", ko: "공원을 " },
+      { original: "cada mañana.", ko: "매일 아침." },
+    ],
     difficulty: "기초",
   },
   {
@@ -55,6 +68,10 @@ export const wordsEs: Word[] = [
     example: "Necesito descansar un poco después del trabajo.",
     examplePronunciationKo: "네세시토 데스칸사르 운 포코 데스푸에스 델 트라바호.",
     exampleKo: "일이 끝난 후 좀 쉬어야 한다.",
+    exampleSegments: [
+      { original: "Necesito descansar un poco ", ko: "좀 쉬어야 한다 " },
+      { original: "después del trabajo.", ko: "일이 끝난 후." },
+    ],
     difficulty: "기초",
   },
   {
@@ -69,6 +86,10 @@ export const wordsEs: Word[] = [
     example: "Voy a esperar aquí hasta que llegues.",
     examplePronunciationKo: "보이 아 에스페라르 아키 아스타 케 예게스.",
     exampleKo: "네가 도착할 때까지 여기서 기다릴게.",
+    exampleSegments: [
+      { original: "Voy a esperar aquí ", ko: "여기서 기다릴게 " },
+      { original: "hasta que llegues.", ko: "네가 도착할 때까지." },
+    ],
     difficulty: "기초",
   },
   {
@@ -83,6 +104,10 @@ export const wordsEs: Word[] = [
     example: "La felicidad está en las pequeñas cosas.",
     examplePronunciationKo: "라 펠리시다드 에스타 엔 라스 페케냐스 코사스.",
     exampleKo: "행복은 작은 것에 있다.",
+    exampleSegments: [
+      { original: "La felicidad está ", ko: "행복은 있다 " },
+      { original: "en las pequeñas cosas.", ko: "작은 것에." },
+    ],
     difficulty: "기초",
   },
   {
@@ -97,6 +122,10 @@ export const wordsEs: Word[] = [
     example: "El paisaje de la montaña es hermoso.",
     examplePronunciationKo: "엘 파이사헤 데 라 몬타냐 에스 에르모소.",
     exampleKo: "산의 풍경이 아름답다.",
+    exampleSegments: [
+      { original: "El paisaje de la montaña ", ko: "산의 풍경이 " },
+      { original: "es hermoso.", ko: "아름답다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -111,6 +140,10 @@ export const wordsEs: Word[] = [
     example: "Es importante estudiar todos los días.",
     examplePronunciationKo: "에스 임포르탄테 에스투디아르 토도스 로스 디아스.",
     exampleKo: "매일 공부하는 것이 중요하다.",
+    exampleSegments: [
+      { original: "Es importante ", ko: "중요하다 " },
+      { original: "estudiar todos los días.", ko: "매일 공부하는 것이." },
+    ],
     difficulty: "기초",
   },
   {
@@ -125,6 +158,11 @@ export const wordsEs: Word[] = [
     example: "Los niños juegan en el parque cada tarde.",
     examplePronunciationKo: "로스 니뇨스 후에간 엔 엘 파르케 카다 타르데.",
     exampleKo: "아이들은 매일 오후 공원에서 논다.",
+    exampleSegments: [
+      { original: "Los niños juegan ", ko: "아이들은 논다 " },
+      { original: "en el parque ", ko: "공원에서 " },
+      { original: "cada tarde.", ko: "매일 오후." },
+    ],
     difficulty: "기초",
   },
   {
@@ -139,6 +177,10 @@ export const wordsEs: Word[] = [
     example: "La libertad es un derecho fundamental.",
     examplePronunciationKo: "라 리베르타드 에스 운 데레초 푼다멘탈.",
     exampleKo: "자유는 기본적인 권리이다.",
+    exampleSegments: [
+      { original: "La libertad ", ko: "자유는 " },
+      { original: "es un derecho fundamental.", ko: "기본적인 권리이다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -153,6 +195,10 @@ export const wordsEs: Word[] = [
     example: "Fue un viaje maravilloso lleno de aventuras.",
     examplePronunciationKo: "푸에 운 비아헤 마라비요소 예노 데 아벤투라스.",
     exampleKo: "모험으로 가득한 놀라운 여행이었다.",
+    exampleSegments: [
+      { original: "Fue un viaje maravilloso ", ko: "놀라운 여행이었다 " },
+      { original: "lleno de aventuras.", ko: "모험으로 가득한." },
+    ],
     difficulty: "중급",
   },
   {
@@ -167,6 +213,10 @@ export const wordsEs: Word[] = [
     example: "Me encanta pasar tiempo en la naturaleza.",
     examplePronunciationKo: "메 엔칸타 파사르 티엠포 엔 라 나투랄레사.",
     exampleKo: "나는 자연 속에서 시간을 보내는 것을 좋아한다.",
+    exampleSegments: [
+      { original: "Me encanta pasar tiempo ", ko: "나는 시간을 보내는 것을 좋아한다 " },
+      { original: "en la naturaleza.", ko: "자연 속에서." },
+    ],
     difficulty: "중급",
   },
   {
@@ -181,6 +231,10 @@ export const wordsEs: Word[] = [
     example: "Necesitas paciencia para aprender un idioma.",
     examplePronunciationKo: "네세시타스 파시엔시아 파라 아프렌데르 운 이디오마.",
     exampleKo: "언어를 배우려면 인내심이 필요하다.",
+    exampleSegments: [
+      { original: "Necesitas paciencia ", ko: "인내심이 필요하다 " },
+      { original: "para aprender un idioma.", ko: "언어를 배우려면." },
+    ],
     difficulty: "중급",
   },
   {
@@ -195,6 +249,10 @@ export const wordsEs: Word[] = [
     example: "Siempre recordaré ese hermoso momento.",
     examplePronunciationKo: "시엠프레 레코르다레 에세 에르모소 모멘토.",
     exampleKo: "나는 그 아름다운 순간을 항상 기억할 것이다.",
+    exampleSegments: [
+      { original: "Siempre recordaré ", ko: "항상 기억할 것이다 " },
+      { original: "ese hermoso momento.", ko: "그 아름다운 순간을." },
+    ],
     difficulty: "중급",
   },
   {
@@ -209,6 +267,10 @@ export const wordsEs: Word[] = [
     example: "Tuve un sueño muy hermoso anoche.",
     examplePronunciationKo: "투베 운 수에뇨 무이 에르모소 아노체.",
     exampleKo: "어젯밤 매우 아름다운 꿈을 꿨다.",
+    exampleSegments: [
+      { original: "Tuve un sueño muy hermoso ", ko: "매우 아름다운 꿈을 꿨다 " },
+      { original: "anoche.", ko: "어젯밤." },
+    ],
     difficulty: "중급",
   },
   {
@@ -223,6 +285,11 @@ export const wordsEs: Word[] = [
     example: "Este lugar es muy tranquilo y relajante.",
     examplePronunciationKo: "에스테 루가르 에스 무이 트랑킬로 이 렐라한테.",
     exampleKo: "이 곳은 매우 조용하고 편안하다.",
+    exampleSegments: [
+      { original: "Este lugar es ", ko: "이 곳은 " },
+      { original: "muy tranquilo ", ko: "매우 조용하고 " },
+      { original: "y relajante.", ko: "편안하다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -237,6 +304,10 @@ export const wordsEs: Word[] = [
     example: "El bombero es valiente y siempre ayuda.",
     examplePronunciationKo: "엘 봄베로 에스 발리엔테 이 시엠프레 아유다.",
     exampleKo: "소방관은 용감하고 항상 도움을 준다.",
+    exampleSegments: [
+      { original: "El bombero es valiente ", ko: "소방관은 용감하고 " },
+      { original: "y siempre ayuda.", ko: "항상 도움을 준다." },
+    ],
     difficulty: "기초",
   },
   {
@@ -251,6 +322,10 @@ export const wordsEs: Word[] = [
     example: "Me encanta aprender nuevos idiomas.",
     examplePronunciationKo: "메 엔칸타 아프렌데르 누에보스 이디오마스.",
     exampleKo: "나는 새로운 언어를 배우는 것을 좋아한다.",
+    exampleSegments: [
+      { original: "Me encanta aprender ", ko: "나는 배우는 것을 좋아한다 " },
+      { original: "nuevos idiomas.", ko: "새로운 언어를." },
+    ],
     difficulty: "기초",
   },
   {
@@ -265,6 +340,10 @@ export const wordsEs: Word[] = [
     example: "Tiene una mente brillante para las matemáticas.",
     examplePronunciationKo: "티에네 우나 멘테 브리얀테 파라 라스 마테마티카스.",
     exampleKo: "그는 수학에서 빛나는 두뇌를 가지고 있다.",
+    exampleSegments: [
+      { original: "Tiene una mente brillante ", ko: "그는 빛나는 두뇌를 가지고 있다 " },
+      { original: "para las matemáticas.", ko: "수학에서." },
+    ],
     difficulty: "중급",
   },
   {
@@ -279,6 +358,10 @@ export const wordsEs: Word[] = [
     example: "Me gusta disfrutar de la música clásica.",
     examplePronunciationKo: "메 구스타 디스프루타르 데 라 무시카 클라시카.",
     exampleKo: "나는 클래식 음악을 즐기는 것을 좋아한다.",
+    exampleSegments: [
+      { original: "Me gusta disfrutar ", ko: "나는 즐기는 것을 좋아한다 " },
+      { original: "de la música clásica.", ko: "클래식 음악을." },
+    ],
     difficulty: "기초",
   },
   {
@@ -293,6 +376,10 @@ export const wordsEs: Word[] = [
     example: "Los niños tienen mucha energía para jugar.",
     examplePronunciationKo: "로스 니뇨스 티에넨 무차 에네르히아 파라 후가르.",
     exampleKo: "아이들은 놀기 위한 에너지가 넘친다.",
+    exampleSegments: [
+      { original: "Los niños tienen mucha energía ", ko: "아이들은 에너지가 넘친다 " },
+      { original: "para jugar.", ko: "놀기 위한." },
+    ],
     difficulty: "기초",
   },
   {
@@ -307,6 +394,10 @@ export const wordsEs: Word[] = [
     example: "Es una persona muy generosa con todos.",
     examplePronunciationKo: "에스 우나 페르소나 무이 헤네로사 콘 토도스.",
     exampleKo: "그는 모두에게 매우 관대한 사람이다.",
+    exampleSegments: [
+      { original: "Es una persona muy generosa ", ko: "그는 매우 관대한 사람이다 " },
+      { original: "con todos.", ko: "모두에게." },
+    ],
     difficulty: "중급",
   },
   {
@@ -321,6 +412,10 @@ export const wordsEs: Word[] = [
     example: "Sé honesto con tus propios sentimientos.",
     examplePronunciationKo: "세 오네스토 콘 투스 프로피오스 센티미엔토스.",
     exampleKo: "자신의 감정에 정직해라.",
+    exampleSegments: [
+      { original: "Sé honesto ", ko: "정직해라 " },
+      { original: "con tus propios sentimientos.", ko: "자신의 감정에." },
+    ],
     difficulty: "기초",
   },
   {
@@ -335,6 +430,10 @@ export const wordsEs: Word[] = [
     example: "Me gustaría conocer nuevas personas.",
     examplePronunciationKo: "메 구스타리아 코노세르 누에바스 페르소나스.",
     exampleKo: "나는 새로운 사람들을 알고 싶다.",
+    exampleSegments: [
+      { original: "Me gustaría conocer ", ko: "나는 알고 싶다 " },
+      { original: "nuevas personas.", ko: "새로운 사람들을." },
+    ],
     difficulty: "중급",
   },
   {
@@ -349,6 +448,10 @@ export const wordsEs: Word[] = [
     example: "Debemos cuidar el medio ambiente.",
     examplePronunciationKo: "데베모스 쿠이다르 엘 메디오 암비엔테.",
     exampleKo: "우리는 환경을 돌봐야 한다.",
+    exampleSegments: [
+      { original: "Debemos cuidar ", ko: "우리는 돌봐야 한다 " },
+      { original: "el medio ambiente.", ko: "환경을." },
+    ],
     difficulty: "중급",
   },
   {
@@ -363,6 +466,10 @@ export const wordsEs: Word[] = [
     example: "Necesitas fuerza para superar los obstáculos.",
     examplePronunciationKo: "네세시타스 푸에르사 파라 수페라르 로스 옵스타쿨로스.",
     exampleKo: "장애물을 극복하려면 힘이 필요하다.",
+    exampleSegments: [
+      { original: "Necesitas fuerza ", ko: "힘이 필요하다 " },
+      { original: "para superar los obstáculos.", ko: "장애물을 극복하려면." },
+    ],
     difficulty: "중급",
   },
   {
@@ -377,6 +484,10 @@ export const wordsEs: Word[] = [
     example: "No puedo olvidar ese día tan especial.",
     examplePronunciationKo: "노 푸에도 올비다르 에세 디아 탄 에스페시알.",
     exampleKo: "그 특별했던 날을 잊을 수 없다.",
+    exampleSegments: [
+      { original: "No puedo olvidar ", ko: "잊을 수 없다 " },
+      { original: "ese día tan especial.", ko: "그 특별했던 날을." },
+    ],
     difficulty: "중급",
   },
   {
@@ -391,6 +502,10 @@ export const wordsEs: Word[] = [
     example: "Te quiero mucho, más que a nada.",
     examplePronunciationKo: "테 키에로 무초, 마스 케 아 나다.",
     exampleKo: "무엇보다 너를 많이 사랑해.",
+    exampleSegments: [
+      { original: "Te quiero mucho, ", ko: "너를 많이 사랑해, " },
+      { original: "más que a nada.", ko: "무엇보다도." },
+    ],
     difficulty: "기초",
   },
   {
@@ -405,6 +520,10 @@ export const wordsEs: Word[] = [
     example: "Eres único en este mundo tan grande.",
     examplePronunciationKo: "에레스 우니코 엔 에스테 문도 탄 그란데.",
     exampleKo: "넌 이 넓은 세상에서 유일한 존재야.",
+    exampleSegments: [
+      { original: "Eres único ", ko: "넌 유일한 존재야 " },
+      { original: "en este mundo tan grande.", ko: "이 넓은 세상에서." },
+    ],
     difficulty: "기초",
   },
   {
@@ -419,6 +538,10 @@ export const wordsEs: Word[] = [
     example: "Los niños crecen muy rápido.",
     examplePronunciationKo: "로스 니뇨스 크레센 무이 라피도.",
     exampleKo: "아이들은 매우 빠르게 성장한다.",
+    exampleSegments: [
+      { original: "Los niños crecen ", ko: "아이들은 성장한다 " },
+      { original: "muy rápido.", ko: "매우 빠르게." },
+    ],
     difficulty: "기초",
   },
   {
@@ -433,6 +556,10 @@ export const wordsEs: Word[] = [
     example: "Tengo una rutina estricta cada mañana.",
     examplePronunciationKo: "텡고 우나 루티나 에스트릭타 카다 마냐나.",
     exampleKo: "나는 매일 아침 엄격한 일과가 있다.",
+    exampleSegments: [
+      { original: "Tengo una rutina estricta ", ko: "나는 엄격한 일과가 있다 " },
+      { original: "cada mañana.", ko: "매일 아침." },
+    ],
     difficulty: "기초",
   },
   {
@@ -447,6 +574,10 @@ export const wordsEs: Word[] = [
     example: "Vivo en un vecindario muy tranquilo.",
     examplePronunciationKo: "비보 엔 운 베신다리오 무이 트랑킬로.",
     exampleKo: "나는 매우 조용한 동네에 산다.",
+    exampleSegments: [
+      { original: "Vivo en un vecindario ", ko: "나는 동네에 산다 " },
+      { original: "muy tranquilo.", ko: "매우 조용한." },
+    ],
     difficulty: "중급",
   },
   {
@@ -461,6 +592,10 @@ export const wordsEs: Word[] = [
     example: "Lavar los platos es mi tarea menos favorita.",
     examplePronunciationKo: "라바르 로스 플라토스 에스 미 타레아 메노스 파보리타.",
     exampleKo: "설거지는 내가 가장 싫어하는 집안일이다.",
+    exampleSegments: [
+      { original: "Lavar los platos ", ko: "설거지는 " },
+      { original: "es mi tarea menos favorita.", ko: "내가 가장 싫어하는 집안일이다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -475,6 +610,10 @@ export const wordsEs: Word[] = [
     example: "Necesito ajustar mi presupuesto mensual.",
     examplePronunciationKo: "네세시토 아후스타르 미 프레수푸에스토 멘수알.",
     exampleKo: "월별 예산을 조정해야 한다.",
+    exampleSegments: [
+      { original: "Necesito ajustar ", ko: "조정해야 한다 " },
+      { original: "mi presupuesto mensual.", ko: "월별 예산을." },
+    ],
     difficulty: "고급",
   },
   {
@@ -489,6 +628,10 @@ export const wordsEs: Word[] = [
     example: "Mi horario de trabajo es muy ocupado.",
     examplePronunciationKo: "미 오라리오 데 트라바호 에스 무이 오쿠파도.",
     exampleKo: "내 업무 일정표는 매우 바쁘다.",
+    exampleSegments: [
+      { original: "Mi horario de trabajo ", ko: "내 업무 일정표는 " },
+      { original: "es muy ocupado.", ko: "매우 바쁘다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -503,6 +646,10 @@ export const wordsEs: Word[] = [
     example: "Mi vecino siempre me ayuda cuando lo necesito.",
     examplePronunciationKo: "미 베시노 시엠프레 메 아유다 쿠안도 로 네세시토.",
     exampleKo: "내 이웃은 내가 필요할 때 항상 도와준다.",
+    exampleSegments: [
+      { original: "Mi vecino siempre me ayuda ", ko: "내 이웃은 항상 도와준다 " },
+      { original: "cuando lo necesito.", ko: "내가 필요할 때." },
+    ],
     difficulty: "기초",
   },
   {
@@ -517,6 +664,10 @@ export const wordsEs: Word[] = [
     example: "Vamos a negociar los términos del acuerdo.",
     examplePronunciationKo: "바모스 아 네고시아르 로스 테르미노스 델 아쿠에르도.",
     exampleKo: "합의 조건에 대해 협상할 것이다.",
+    exampleSegments: [
+      { original: "Vamos a negociar ", ko: "협상할 것이다 " },
+      { original: "los términos del acuerdo.", ko: "합의 조건에 대해." },
+    ],
     difficulty: "중급",
   },
   {
@@ -531,6 +682,10 @@ export const wordsEs: Word[] = [
     example: "Los ingresos de la empresa aumentaron este año.",
     examplePronunciationKo: "로스 잉그레소스 데 라 엠프레사 아우멘타론 에스테 아뇨.",
     exampleKo: "회사의 수익이 올해 증가했다.",
+    exampleSegments: [
+      { original: "Los ingresos de la empresa ", ko: "회사의 수익이 " },
+      { original: "aumentaron este año.", ko: "올해 증가했다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -545,6 +700,10 @@ export const wordsEs: Word[] = [
     example: "El plazo para entregar el proyecto es mañana.",
     examplePronunciationKo: "엘 플라소 파라 엔트레가르 엘 프로옉토 에스 마냐나.",
     exampleKo: "프로젝트 제출 마감일은 내일이다.",
+    exampleSegments: [
+      { original: "El plazo para entregar el proyecto ", ko: "프로젝트 제출 마감일은 " },
+      { original: "es mañana.", ko: "내일이다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -559,6 +718,10 @@ export const wordsEs: Word[] = [
     example: "Revisa la agenda antes de la reunión.",
     examplePronunciationKo: "레비사 라 아헨다 안테스 데 라 레우니온.",
     exampleKo: "회의 전에 안건을 검토해라.",
+    exampleSegments: [
+      { original: "Revisa la agenda ", ko: "안건을 검토해라 " },
+      { original: "antes de la reunión.", ko: "회의 전에." },
+    ],
     difficulty: "중급",
   },
   {
@@ -573,6 +736,10 @@ export const wordsEs: Word[] = [
     example: "Presentó una propuesta de negocio innovadora.",
     examplePronunciationKo: "프레센토 우나 프로푸에스타 데 네고시오 이노바도라.",
     exampleKo: "혁신적인 사업 제안서를 발표했다.",
+    exampleSegments: [
+      { original: "Presentó una propuesta de negocio ", ko: "사업 제안서를 발표했다 " },
+      { original: "innovadora.", ko: "혁신적인." },
+    ],
     difficulty: "중급",
   },
   {
@@ -587,6 +754,10 @@ export const wordsEs: Word[] = [
     example: "La fusión de las dos empresas fue un éxito.",
     examplePronunciationKo: "라 푸시온 데 라스 도스 엠프레사스 푸에 운 엑시토.",
     exampleKo: "두 회사의 합병은 성공적이었다.",
+    exampleSegments: [
+      { original: "La fusión de las dos empresas ", ko: "두 회사의 합병은 " },
+      { original: "fue un éxito.", ko: "성공적이었다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -601,6 +772,10 @@ export const wordsEs: Word[] = [
     example: "Firmamos el contrato con el nuevo cliente.",
     examplePronunciationKo: "피르마모스 엘 콘트라토 콘 엘 누에보 클리엔테.",
     exampleKo: "새 고객과 계약서에 서명했다.",
+    exampleSegments: [
+      { original: "Firmamos el contrato ", ko: "계약서에 서명했다 " },
+      { original: "con el nuevo cliente.", ko: "새 고객과." },
+    ],
     difficulty: "고급",
   },
   {
@@ -615,6 +790,10 @@ export const wordsEs: Word[] = [
     example: "Los accionistas aprobaron el nuevo plan estratégico.",
     examplePronunciationKo: "로스 악시오니스타스 아프로바론 엘 누에보 플란 에스트라테히코.",
     exampleKo: "주주들이 새 전략 계획을 승인했다.",
+    exampleSegments: [
+      { original: "Los accionistas aprobaron ", ko: "주주들이 승인했다 " },
+      { original: "el nuevo plan estratégico.", ko: "새 전략 계획을." },
+    ],
     difficulty: "고급",
   },
   {
@@ -629,6 +808,10 @@ export const wordsEs: Word[] = [
     example: "Nuestro itinerario incluye tres países distintos.",
     examplePronunciationKo: "누에스트로 이티네라리오 잉클루예 트레스 파이세스 디스틴토스.",
     exampleKo: "우리 여행 일정에는 세 개의 나라가 포함된다.",
+    exampleSegments: [
+      { original: "Nuestro itinerario incluye ", ko: "우리 여행 일정에는 포함된다 " },
+      { original: "tres países distintos.", ko: "세 개의 나라가." },
+    ],
     difficulty: "고급",
   },
   {
@@ -643,6 +826,10 @@ export const wordsEs: Word[] = [
     example: "Reservamos un alojamiento cerca del centro.",
     examplePronunciationKo: "레세르바모스 운 알로하미엔토 세르카 델 센트로.",
     exampleKo: "도심 근처의 숙박 시설을 예약했다.",
+    exampleSegments: [
+      { original: "Reservamos un alojamiento ", ko: "숙박 시설을 예약했다 " },
+      { original: "cerca del centro.", ko: "도심 근처의." },
+    ],
     difficulty: "고급",
   },
   {
@@ -657,6 +844,10 @@ export const wordsEs: Word[] = [
     example: "Tuvimos que pasar por la aduana al llegar.",
     examplePronunciationKo: "투비모스 케 파사르 포르 라 아두아나 알 예가르.",
     exampleKo: "도착 시 세관을 통과해야 했다.",
+    exampleSegments: [
+      { original: "Tuvimos que pasar por la aduana ", ko: "세관을 통과해야 했다 " },
+      { original: "al llegar.", ko: "도착 시." },
+    ],
     difficulty: "고급",
   },
   {
@@ -671,6 +862,10 @@ export const wordsEs: Word[] = [
     example: "La salida del vuelo es a las ocho de la mañana.",
     examplePronunciationKo: "라 살리다 델 부엘로 에스 아 라스 오초 데 라 마냐나.",
     exampleKo: "항공편 출발은 오전 8시이다.",
+    exampleSegments: [
+      { original: "La salida del vuelo ", ko: "항공편 출발은 " },
+      { original: "es a las ocho de la mañana.", ko: "오전 8시이다." },
+    ],
     difficulty: "중급",
   },
   {
@@ -685,6 +880,10 @@ export const wordsEs: Word[] = [
     example: "Compré un recuerdo para toda mi familia.",
     examplePronunciationKo: "콤프레 운 레쿠에르도 파라 토다 미 파밀리아.",
     exampleKo: "가족 모두를 위해 기념품을 샀다.",
+    exampleSegments: [
+      { original: "Compré un recuerdo ", ko: "기념품을 샀다 " },
+      { original: "para toda mi familia.", ko: "가족 모두를 위해." },
+    ],
     difficulty: "고급",
   },
   {
@@ -699,6 +898,10 @@ export const wordsEs: Word[] = [
     example: "Visitamos el monumento histórico de la ciudad.",
     examplePronunciationKo: "비시타모스 엘 모누멘토 이스토리코 데 라 시우다드.",
     exampleKo: "도시의 역사적 기념물을 방문했다.",
+    exampleSegments: [
+      { original: "Visitamos el monumento histórico ", ko: "역사적 기념물을 방문했다 " },
+      { original: "de la ciudad.", ko: "도시의." },
+    ],
     difficulty: "고급",
   },
   {
@@ -713,6 +916,10 @@ export const wordsEs: Word[] = [
     example: "El informe fue revisado y aprobado posteriormente.",
     examplePronunciationKo: "엘 인포르메 푸에 레비사도 이 아프로바도 포스테리오르멘테.",
     exampleKo: "보고서는 검토된 후 승인되었다.",
+    exampleSegments: [
+      { original: "El informe fue revisado ", ko: "보고서는 검토된 후 " },
+      { original: "y aprobado posteriormente.", ko: "승인되었다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -727,6 +934,10 @@ export const wordsEs: Word[] = [
     example: "La empresa compensará a los empleados afectados.",
     examplePronunciationKo: "라 엠프레사 콤펜사라 아 로스 엠플레아도스 아펙타도스.",
     exampleKo: "회사는 피해를 입은 직원들에게 보상할 것이다.",
+    exampleSegments: [
+      { original: "La empresa compensará ", ko: "회사는 보상할 것이다 " },
+      { original: "a los empleados afectados.", ko: "피해를 입은 직원들에게." },
+    ],
     difficulty: "고급",
   },
   {
@@ -741,6 +952,11 @@ export const wordsEs: Word[] = [
     example: "Debemos implementar la nueva política de inmediato.",
     examplePronunciationKo: "데베모스 임플레멘타르 라 누에바 폴리티카 데 인메디아토.",
     exampleKo: "새 정책을 즉시 시행해야 한다.",
+    exampleSegments: [
+      { original: "Debemos implementar ", ko: "시행해야 한다 " },
+      { original: "la nueva política ", ko: "새 정책을 " },
+      { original: "de inmediato.", ko: "즉시." },
+    ],
     difficulty: "고급",
   },
   {
@@ -755,6 +971,10 @@ export const wordsEs: Word[] = [
     example: "Por favor, envíe la factura antes del viernes.",
     examplePronunciationKo: "포르 파보르, 엔비에 라 팍투라 안테스 델 비에르네스.",
     exampleKo: "금요일 전까지 청구서를 보내주세요.",
+    exampleSegments: [
+      { original: "Por favor, envíe la factura ", ko: "청구서를 보내주세요 " },
+      { original: "antes del viernes.", ko: "금요일 전까지." },
+    ],
     difficulty: "고급",
   },
   {
@@ -769,6 +989,10 @@ export const wordsEs: Word[] = [
     example: "Los resultados preliminares son muy positivos.",
     examplePronunciationKo: "로스 레술타도스 프렐리미나레스 손 무이 포시티보스.",
     exampleKo: "예비 결과가 매우 긍정적이다.",
+    exampleSegments: [
+      { original: "Los resultados preliminares ", ko: "예비 결과가 " },
+      { original: "son muy positivos.", ko: "매우 긍정적이다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -783,6 +1007,10 @@ export const wordsEs: Word[] = [
     example: "El año fiscal de la empresa termina en diciembre.",
     examplePronunciationKo: "엘 아뇨 피스칼 데 라 엠프레사 테르미나 엔 디시엠브레.",
     exampleKo: "회사의 회계 연도는 12월에 끝난다.",
+    exampleSegments: [
+      { original: "El año fiscal de la empresa ", ko: "회사의 회계 연도는 " },
+      { original: "termina en diciembre.", ko: "12월에 끝난다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -797,6 +1025,10 @@ export const wordsEs: Word[] = [
     example: "La empresa planea adquirir nuevas tecnologías.",
     examplePronunciationKo: "라 엠프레사 플라네아 아드키리르 누에바스 테크놀로히아스.",
     exampleKo: "회사는 새 기술을 획득할 계획이다.",
+    exampleSegments: [
+      { original: "La empresa planea adquirir ", ko: "회사는 획득할 계획이다 " },
+      { original: "nuevas tecnologías.", ko: "새 기술을." },
+    ],
     difficulty: "고급",
   },
   {
@@ -811,6 +1043,10 @@ export const wordsEs: Word[] = [
     example: "La subsidiaria opera de forma independiente.",
     examplePronunciationKo: "라 숩시디아리아 오페라 데 포르마 인데펜디엔테.",
     exampleKo: "자회사는 독립적으로 운영된다.",
+    exampleSegments: [
+      { original: "La subsidiaria opera ", ko: "자회사는 운영된다 " },
+      { original: "de forma independiente.", ko: "독립적으로." },
+    ],
     difficulty: "고급",
   },
   {
@@ -825,6 +1061,10 @@ export const wordsEs: Word[] = [
     example: "El gasto anual en formación ha aumentado.",
     examplePronunciationKo: "엘 가스토 아누알 엔 포르마시온 아 아우멘타도.",
     exampleKo: "교육 관련 연간 지출이 증가했다.",
+    exampleSegments: [
+      { original: "El gasto anual en formación ", ko: "교육 관련 연간 지출이 " },
+      { original: "ha aumentado.", ko: "증가했다." },
+    ],
     difficulty: "고급",
   },
   {
@@ -839,6 +1079,10 @@ export const wordsEs: Word[] = [
     example: "Reconoció su error ante toda la empresa.",
     examplePronunciationKo: "레코노시오 수 에로르 안테 토다 라 엠프레사.",
     exampleKo: "그는 회사 전체 앞에서 자신의 실수를 인정했다.",
+    exampleSegments: [
+      { original: "Reconoció su error ", ko: "자신의 실수를 인정했다 " },
+      { original: "ante toda la empresa.", ko: "회사 전체 앞에서." },
+    ],
     difficulty: "고급",
   },
 ];

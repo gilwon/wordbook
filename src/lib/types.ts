@@ -14,7 +14,13 @@ export interface Word {
   example: string;
   examplePronunciationKo?: string;
   exampleKo: string;
+  exampleSegments?: ExampleSegment[];
   difficulty: Difficulty;
+}
+
+export interface ExampleSegment {
+  original: string;
+  ko: string;
 }
 
 export type QuizType = "meaning-choice" | "word-choice" | "fill-blank";
